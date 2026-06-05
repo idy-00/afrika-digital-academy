@@ -3,55 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Afrika Digital Academy — Maîtrise le E-commerce Africain</title>
-  <meta name="description" content="Formations e-commerce adaptées au marché africain. Apprends à vendre en ligne avec des méthodes qui fonctionnent vraiment en Afrique." />
-
-  <!-- Google Fonts -->
+  <title>Afrika Digital Academy — Formation E-commerce Afrique</title>
+  <meta name="description" content="Méthode complète pour lancer ton e-commerce en Afrique — produits, boutique YouCan, Facebook Ads. Adaptée au marché africain." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
 
   <!-- Facebook Pixel -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'PIXEL_ID_ICI');
-    fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','PIXEL_ID_ICI');fbq('track','PageView');
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=PIXEL_ID_ICI&ev=PageView&noscript=1" />
-  </noscript>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID_ICI&ev=PageView&noscript=1"/></noscript>
 
   <style>
-    /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --green:       #1a3d2b;
       --green-light: #254d38;
       --green-dark:  #102418;
+      --green-deep:  #0d1f14;
       --gold:        #C9A84C;
       --gold-light:  #dfc06e;
       --gold-dim:    #a88535;
+      --gold-pale:   rgba(201,168,76,.12);
       --white:       #ffffff;
-      --off-white:   #f8f5ee;
-      --text:        #1c1c1c;
-      --text-muted:  #555;
-      --border:      rgba(201,168,76,.25);
+      --cream:       #F8F4EC;
+      --cream-2:     #F2EDE2;
+      --text:        #1a1a1a;
+      --text-muted:  #5a5a5a;
+      --text-light:  #8a8a8a;
+      --border:      rgba(26,61,43,.10);
+      --border-gold: rgba(201,168,76,.25);
 
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'Inter', system-ui, sans-serif;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
 
-      --radius: 12px;
-      --shadow: 0 4px 32px rgba(26,61,43,.12);
-      --shadow-lg: 0 12px 64px rgba(26,61,43,.20);
+      --r-sm: 8px;
+      --r-md: 14px;
+      --r-lg: 20px;
+      --r-xl: 28px;
+
+      --shadow-sm:  0 2px 12px rgba(26,61,43,.07);
+      --shadow-md:  0 6px 32px rgba(26,61,43,.12);
+      --shadow-lg:  0 16px 56px rgba(26,61,43,.18);
+      --shadow-xl:  0 24px 80px rgba(26,61,43,.24);
     }
 
     html { scroll-behavior: smooth; }
@@ -61,619 +58,808 @@
       background: var(--white);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
-
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
 
-    /* ===== UTILITY ===== */
-    .container {
-      width: 100%;
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    /* ── CONTAINER ── */
+    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
-    .section { padding: 96px 0; }
-    .section--alt { background: var(--off-white); }
+    /* ── SECTIONS ── */
+    .section       { padding: 100px 0; }
+    .section--cream { background: var(--cream); }
+    .section--cream-2 { background: var(--cream-2); }
 
+    /* ── TAG PILL ── */
     .tag {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-body);
       font-size: 11px;
       font-weight: 600;
-      letter-spacing: .12em;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      color: var(--gold);
-      background: rgba(201,168,76,.12);
-      border: 1px solid var(--border);
+      color: var(--gold-dim);
+      background: var(--gold-pale);
+      border: 1px solid var(--border-gold);
       border-radius: 100px;
       padding: 5px 14px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .tag::before {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
     }
 
-    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.2; }
-
-    .section-title {
-      font-size: clamp(28px, 5vw, 44px);
+    /* ── SECTION HEADERS ── */
+    .sec-head { text-align: center; margin-bottom: 64px; }
+    .sec-title {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 5vw, 48px);
+      font-weight: 700;
       color: var(--green);
+      line-height: 1.15;
       margin-bottom: 16px;
     }
-
-    .section-sub {
-      font-size: 17px;
+    .sec-sub {
+      font-size: 16px;
       color: var(--text-muted);
-      max-width: 560px;
-      margin: 0 auto 56px;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.75;
     }
 
-    .text-center { text-align: center; }
-
-    /* ===== BUTTON ===== */
+    /* ── BUTTONS ── */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       font-family: var(--font-body);
-      font-size: 15px;
       font-weight: 600;
       border: none;
-      border-radius: var(--radius);
-      padding: 16px 36px;
       cursor: pointer;
-      transition: all .22s ease;
-      letter-spacing: .02em;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
       text-decoration: none;
+      white-space: nowrap;
     }
-
     .btn-primary {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      background: var(--gold);
       color: var(--green-dark);
-      box-shadow: 0 4px 18px rgba(201,168,76,.35);
+      border-radius: var(--r-md);
+      font-size: 15px;
+      padding: 15px 32px;
+      box-shadow: 0 4px 20px rgba(201,168,76,.30);
+      letter-spacing: .01em;
     }
     .btn-primary:hover {
+      background: var(--gold-light);
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(201,168,76,.50);
+      box-shadow: 0 8px 32px rgba(201,168,76,.45);
     }
     .btn-primary:active { transform: translateY(0); }
-
-    .btn-outline {
+    .btn-lg { font-size: 16px; padding: 18px 40px; border-radius: var(--r-lg); }
+    .btn-xl { font-size: 18px; padding: 20px 48px; border-radius: var(--r-lg); }
+    .btn-block { width: 100%; }
+    .btn-ghost {
       background: transparent;
-      color: var(--gold);
-      border: 1.5px solid var(--gold);
+      color: rgba(255,255,255,.80);
+      border: 1.5px solid rgba(255,255,255,.25);
+      border-radius: var(--r-md);
+      font-size: 15px;
+      padding: 14px 28px;
     }
-    .btn-outline:hover {
-      background: rgba(201,168,76,.08);
+    .btn-ghost:hover {
+      background: rgba(255,255,255,.08);
+      color: white;
+      border-color: rgba(255,255,255,.45);
       transform: translateY(-2px);
     }
 
-    .btn-lg { font-size: 17px; padding: 20px 48px; border-radius: 14px; }
+    /* ── SPINNER ── */
+    .spinner {
+      display: none;
+      width: 18px; height: 18px;
+      border: 2px solid rgba(26,61,43,.25);
+      border-top-color: var(--green-dark);
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .btn.loading .spinner { display: block; }
+    .btn.loading .btn-text { opacity: .65; }
 
-    .btn-block { width: 100%; }
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
 
-    /* ===== NAV ===== */
+    /* ════════════════════════════════
+       NAV
+    ════════════════════════════════ */
     .nav {
       position: fixed;
       top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(26,61,43,.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(201,168,76,.15);
+      z-index: 200;
+      background: rgba(16,36,24,.97);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(201,168,76,.12);
+      transition: box-shadow .3s;
     }
-
+    .nav.scrolled { box-shadow: 0 4px 32px rgba(0,0,0,.25); }
     .nav__inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 68px;
+      height: 66px;
     }
-
     .nav__logo {
       font-family: var(--font-display);
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 700;
       color: var(--white);
       display: flex;
       align-items: center;
       gap: 10px;
+      letter-spacing: -.01em;
     }
-
     .nav__logo-accent { color: var(--gold); }
-
     .nav__cta { display: none; }
-    @media (min-width: 640px) { .nav__cta { display: inline-flex; padding: 10px 24px; font-size: 14px; } }
+    @media (min-width: 600px) { .nav__cta { display: inline-flex; font-size: 14px; padding: 10px 22px; } }
 
-    /* ===== HERO ===== */
+    /* ════════════════════════════════
+       HERO
+    ════════════════════════════════ */
     .hero {
-      min-height: 100vh;
-      background: linear-gradient(160deg, var(--green-dark) 0%, var(--green) 55%, #1f5035 100%);
-      display: flex;
-      align-items: center;
-      padding-top: 68px;
+      min-height: 100svh;
+      background: linear-gradient(155deg, var(--green-deep) 0%, var(--green) 50%, #1f5035 100%);
+      padding-top: 66px;
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: center;
     }
 
+    /* Geometric accent */
     .hero::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      top: -120px; right: -120px;
+      width: 560px; height: 560px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,.10) 0%, transparent 65%);
+      pointer-events: none;
     }
-
+    /* Subtle grid texture */
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -2px; left: 0; right: 0;
-      height: 80px;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    /* Bottom fade */
+    .hero__fade {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 100px;
       background: linear-gradient(to bottom, transparent, var(--white));
+      z-index: 2;
     }
 
-    .hero__content {
+    .hero__inner {
       position: relative;
-      z-index: 1;
-      max-width: 720px;
-      padding: 80px 0;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+      padding: 80px 0 100px;
+      width: 100%;
+    }
+    @media (min-width: 900px) {
+      .hero__inner { grid-template-columns: 1fr 420px; }
     }
 
     .hero__badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(201,168,76,.15);
-      border: 1px solid rgba(201,168,76,.30);
+      background: rgba(201,168,76,.13);
+      border: 1px solid rgba(201,168,76,.28);
       color: var(--gold-light);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
-      letter-spacing: .04em;
+      letter-spacing: .06em;
       border-radius: 100px;
-      padding: 7px 16px;
-      margin-bottom: 28px;
+      padding: 6px 16px;
+      margin-bottom: 32px;
     }
-
-    .hero__badge-dot {
+    .hero__badge-pulse {
       width: 7px; height: 7px;
       border-radius: 50%;
       background: var(--gold);
       animation: pulse 2s infinite;
+      flex-shrink: 0;
     }
-
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: .6; transform: scale(.85); }
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:.5; transform:scale(.8); }
     }
 
     .hero__title {
-      font-size: clamp(38px, 7vw, 72px);
+      font-family: var(--font-display);
+      font-size: clamp(40px, 7vw, 76px);
+      font-weight: 800;
       color: var(--white);
-      margin-bottom: 24px;
-      line-height: 1.1;
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      margin-bottom: 28px;
     }
-
     .hero__title em {
-      font-style: normal;
+      font-style: italic;
       color: var(--gold);
-      position: relative;
     }
 
     .hero__sub {
-      font-size: clamp(16px, 2.5vw, 20px);
-      color: rgba(255,255,255,.75);
-      max-width: 560px;
-      margin-bottom: 40px;
+      font-size: clamp(15px, 2.2vw, 18px);
+      color: rgba(255,255,255,.70);
+      max-width: 540px;
+      line-height: 1.75;
       font-weight: 300;
+      margin-bottom: 40px;
     }
 
-    .hero__cta-group {
+    .hero__cta-row {
       display: flex;
       flex-wrap: wrap;
+      gap: 14px;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 56px;
+      margin-bottom: 16px;
     }
 
-    .hero__proof {
+    .hero__guarantee {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: rgba(255,255,255,.50);
+      margin-bottom: 48px;
+    }
+    .hero__guarantee svg { color: rgba(201,168,76,.7); flex-shrink: 0; }
+
+    .hero__pillars {
       display: flex;
       flex-wrap: wrap;
-      gap: 32px;
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding-top: 32px;
     }
-
-    .hero__stat {
+    .hero__pillar {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 0 28px 0 0;
+      margin-right: 28px;
+      border-right: 1px solid rgba(255,255,255,.10);
     }
-
-    .hero__stat-num {
-      font-family: var(--font-display);
-      font-size: 32px;
-      font-weight: 700;
+    .hero__pillar:last-child { border-right: none; padding-right: 0; margin-right: 0; }
+    .hero__pillar-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: rgba(201,168,76,.15);
+      border: 1px solid rgba(201,168,76,.20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
       color: var(--gold);
-      line-height: 1;
     }
-
-    .hero__stat-label {
+    .hero__pillar-label {
       font-size: 13px;
-      color: rgba(255,255,255,.55);
-      margin-top: 4px;
+      font-weight: 500;
+      color: rgba(255,255,255,.75);
+      line-height: 1.3;
+    }
+    .hero__pillar-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,.38);
+      margin-top: 1px;
     }
 
-    /* ===== TRUST BAR ===== */
+    /* Hero image column */
+    .hero__visual {
+      position: relative;
+      display: none;
+    }
+    @media (min-width: 900px) { .hero__visual { display: block; } }
+
+    .hero__img-wrap {
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+    }
+    .hero__img-wrap img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+    .hero__img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(16,36,24,.55) 0%, transparent 50%);
+    }
+
+    .hero__float {
+      position: absolute;
+      border-radius: var(--r-md);
+      padding: 11px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-lg);
+      white-space: nowrap;
+    }
+    .hero__float--gold {
+      top: 28px; left: -28px;
+      background: var(--gold);
+      color: var(--green-dark);
+    }
+    .hero__float--dark {
+      bottom: 36px; right: -20px;
+      background: var(--green-dark);
+      border: 1.5px solid rgba(201,168,76,.35);
+      color: white;
+    }
+    .hero__float svg { flex-shrink: 0; }
+
+    /* ════════════════════════════════
+       TRUST BAR
+    ════════════════════════════════ */
     .trust-bar {
       background: var(--green);
-      padding: 20px 0;
+      padding: 18px 0;
     }
-
     .trust-bar__inner {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 32px 48px;
+      gap: 8px 0;
     }
-
     .trust-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      color: rgba(255,255,255,.80);
-      font-size: 14px;
+      gap: 9px;
+      color: rgba(255,255,255,.78);
+      font-size: 13.5px;
       font-weight: 500;
+      padding: 8px 24px;
+      border-right: 1px solid rgba(255,255,255,.10);
     }
-
+    .trust-item:last-child { border-right: none; }
     .trust-item__icon {
-      width: 36px; height: 36px;
+      width: 32px; height: 32px;
       border-radius: 50%;
-      background: rgba(201,168,76,.15);
-      border: 1px solid rgba(201,168,76,.25);
+      background: rgba(201,168,76,.13);
+      border: 1px solid rgba(201,168,76,.20);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
+      color: var(--gold);
       flex-shrink: 0;
     }
+    @media (max-width: 700px) {
+      .trust-item { border-right: none; padding: 6px 16px; }
+    }
 
-    /* ===== LEARN SECTION ===== */
-    .learn__grid {
+    /* ════════════════════════════════
+       LEARN GRID
+    ════════════════════════════════ */
+    .learn-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
-      max-width: 760px;
+      gap: 14px;
+      max-width: 800px;
       margin: 0 auto;
     }
+    @media (min-width: 580px) { .learn-grid { grid-template-columns: 1fr 1fr; } }
 
-    @media (min-width: 600px) {
-      .learn__grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    .learn__item {
+    .learn-item {
       display: flex;
       align-items: flex-start;
       gap: 16px;
       background: var(--white);
-      border: 1px solid rgba(26,61,43,.10);
-      border-radius: var(--radius);
-      padding: 20px;
-      transition: box-shadow .2s, border-color .2s;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--r-md);
+      padding: 20px 22px;
+      transition: box-shadow .2s, border-left-color .2s, transform .2s;
     }
-
-    .learn__item:hover {
-      box-shadow: var(--shadow);
-      border-color: var(--border);
+    .learn-item:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
     }
-
-    .learn__icon {
-      width: 44px; height: 44px;
+    .learn-item__icon {
+      width: 42px; height: 42px;
       border-radius: 10px;
-      background: rgba(26,61,43,.07);
-      border: 1px solid rgba(26,61,43,.10);
+      background: rgba(26,61,43,.06);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      color: var(--green);
       flex-shrink: 0;
     }
-
-    .learn__item-title {
-      font-size: 15px;
+    .learn-item__title {
+      font-size: 14.5px;
       font-weight: 600;
       color: var(--green);
       margin-bottom: 4px;
+      line-height: 1.3;
     }
-
-    .learn__item-desc {
-      font-size: 13.5px;
+    .learn-item__desc {
+      font-size: 13px;
       color: var(--text-muted);
+      line-height: 1.6;
     }
 
-    /* ===== PROGRAMME ===== */
-    .programme__list {
-      max-width: 680px;
-      margin: 0 auto;
-      counter-reset: module;
+    /* ════════════════════════════════
+       ABOUT / MISSION
+    ════════════════════════════════ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 56px;
+      align-items: center;
     }
+    @media (min-width: 820px) { .about-grid { grid-template-columns: 1fr 1fr; } }
 
-    .module {
-      counter-increment: module;
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      padding: 24px 0;
-      border-bottom: 1px solid rgba(26,61,43,.08);
+    .about-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 250px 200px;
+      gap: 10px;
     }
-
-    .module:last-child { border-bottom: none; }
-
-    .module__num {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: var(--green);
+    .about-photo { border-radius: var(--r-lg); overflow: hidden; position: relative; }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .about-photo--tall { grid-row: 1 / 3; }
+    .about-photo__label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 12px 14px;
+      background: linear-gradient(to top, rgba(16,36,24,.7) 0%, transparent 100%);
       color: var(--gold);
-      font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .about-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+    .about-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(26,61,43,.05);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 11px 16px;
+    }
+    .about-badge__icon {
+      width: 36px; height: 36px;
+      border-radius: 9px;
+      background: var(--green);
       display: flex;
       align-items: center;
       justify-content: center;
+      color: var(--gold);
       flex-shrink: 0;
     }
+    .about-badge__title { font-size: 13px; font-weight: 600; color: var(--green); }
+    .about-badge__sub   { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
 
-    .module__title {
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--green);
-      margin-bottom: 6px;
+    /* ════════════════════════════════
+       PROGRAMME
+    ════════════════════════════════ */
+    .modules { max-width: 740px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+
+    .module-card {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      background: var(--white);
+      margin-bottom: 16px;
+      transition: box-shadow .2s, transform .2s;
     }
+    .module-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
 
-    .module__desc { font-size: 14.5px; color: var(--text-muted); margin-bottom: 10px; }
-
-    .module__lessons {
-      list-style: none;
+    .module-card__num {
+      background: var(--green);
       display: flex;
-      flex-direction: column;
-      gap: 5px;
-      margin-top: 10px;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: -.02em;
+      flex-shrink: 0;
     }
-    .module__lessons li {
+    .module-card__body { padding: 24px 28px; }
+    .module-card__title {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+    .module-card__desc { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.65; }
+    .module-lessons { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .module-lessons li {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
-      font-size: 13px;
+      gap: 9px;
+      font-size: 13.5px;
       color: var(--text-muted);
     }
-    .module__lessons li::before {
-      content: '→';
-      color: var(--gold-dim);
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
+    .module-lessons li svg { color: var(--gold-dim); flex-shrink: 0; margin-top: 2px; }
 
-    /* ===== PRICING ===== */
-    .pricing__grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      max-width: 860px;
+    /* ════════════════════════════════
+       PRICING
+    ════════════════════════════════ */
+    .pricing-wrap {
+      max-width: 500px;
       margin: 0 auto;
-      align-items: start;
     }
-
-    @media (min-width: 700px) {
-      .pricing__grid { grid-template-columns: 1fr 1fr; }
-    }
-
     .pricing-card {
-      background: var(--white);
-      border: 1.5px solid rgba(26,61,43,.12);
-      border-radius: 20px;
-      padding: 36px 32px;
-      transition: transform .25s, box-shadow .25s;
-    }
-
-    .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-
-    .pricing-card--featured {
-      background: linear-gradient(160deg, var(--green) 0%, var(--green-dark) 100%);
-      border-color: var(--gold);
-      box-shadow: var(--shadow-lg);
+      background: linear-gradient(155deg, var(--green) 0%, var(--green-dark) 100%);
+      border: 1.5px solid rgba(201,168,76,.30);
+      border-radius: var(--r-xl);
+      padding: 48px 40px;
       position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
     }
-
-    .pricing-card--featured .pricing-card__name,
-    .pricing-card--featured .pricing-card__feature { color: rgba(255,255,255,.85); }
-
-    .pricing-card--featured .pricing-card__name-label { color: var(--gold-light); }
-
-    .pricing-badge {
+    .pricing-card::before {
+      content: '';
       position: absolute;
-      top: -14px; left: 50%;
-      transform: translateX(-50%);
+      top: -80px; right: -80px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,.08) 0%, transparent 65%);
+    }
+    .pricing-card__inner { position: relative; z-index: 1; }
+
+    .pricing-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       background: var(--gold);
       color: var(--green-dark);
       font-size: 11px;
       font-weight: 700;
       letter-spacing: .10em;
       text-transform: uppercase;
-      padding: 5px 18px;
       border-radius: 100px;
-      white-space: nowrap;
-    }
-
-    .pricing-card__name-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .10em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .pricing-card__name {
-      font-family: var(--font-display);
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--green);
+      padding: 5px 16px;
       margin-bottom: 24px;
     }
 
-    .pricing-card--featured .pricing-card__name { color: var(--white); }
-
-    .pricing-price {
+    .pricing-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.40);
+      margin-bottom: 6px;
+    }
+    .pricing-name {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--white);
       margin-bottom: 28px;
     }
 
-    .pricing-price__old {
+    .pricing-amount-row { margin-bottom: 8px; }
+    .pricing-old {
       font-size: 15px;
-      color: rgba(255,255,255,.45);
+      color: rgba(255,255,255,.38);
       text-decoration: line-through;
       margin-bottom: 4px;
     }
-
-    .pricing-card:not(.pricing-card--featured) .pricing-price__old {
-      color: var(--text-muted);
-    }
-
-    .pricing-price__amount {
+    .pricing-amount {
       font-family: var(--font-display);
-      font-size: 48px;
-      font-weight: 700;
+      font-size: 68px;
+      font-weight: 800;
       color: var(--gold);
       line-height: 1;
+      letter-spacing: -.03em;
     }
-
-    .pricing-card:not(.pricing-card--featured) .pricing-price__amount {
-      color: var(--green);
-    }
-
-    .pricing-price__unit {
-      font-size: 16px;
+    .pricing-amount span {
+      font-size: 22px;
       font-weight: 400;
-      color: var(--text-muted);
+      color: rgba(255,255,255,.50);
+      letter-spacing: 0;
+      margin-left: 4px;
     }
-
-    .pricing-card--featured .pricing-price__unit { color: rgba(255,255,255,.55); }
+    .pricing-save {
+      display: inline-block;
+      background: rgba(201,168,76,.18);
+      border: 1px solid rgba(201,168,76,.30);
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      border-radius: 100px;
+      padding: 4px 14px;
+      margin-top: 10px;
+      margin-bottom: 28px;
+    }
 
     .pricing-divider {
       border: none;
-      border-top: 1px solid rgba(201,168,76,.20);
+      border-top: 1px solid rgba(201,168,76,.15);
       margin: 24px 0;
     }
 
-    .pricing-card:not(.pricing-card--featured) .pricing-divider {
-      border-color: rgba(26,61,43,.10);
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      margin-bottom: 32px;
+      text-align: left;
     }
-
-    .pricing-card__features { list-style: none; margin-bottom: 32px; display: flex; flex-direction: column; gap: 12px; }
-
-    .pricing-card__feature {
+    .pricing-feature {
       display: flex;
       align-items: flex-start;
       gap: 12px;
       font-size: 14.5px;
-      color: var(--text);
+      color: rgba(255,255,255,.80);
     }
-
-    .pricing-card__feature-icon {
+    .pricing-feature__check {
       width: 20px; height: 20px;
       border-radius: 50%;
       background: rgba(201,168,76,.20);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      color: var(--gold);
       flex-shrink: 0;
       margin-top: 1px;
     }
 
-    .pricing-card--featured .pricing-card__feature-icon {
-      background: rgba(201,168,76,.25);
-    }
-
-    /* ===== TESTIMONIALS ===== */
-    .testimonials__grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 700px) { .testimonials__grid { grid-template-columns: repeat(3, 1fr); } }
-
-    .testimonial-card {
-      background: var(--white);
-      border: 1px solid rgba(26,61,43,.10);
-      border-radius: 16px;
-      padding: 28px 24px;
-      position: relative;
-      transition: box-shadow .2s;
-    }
-
-    .testimonial-card:hover { box-shadow: var(--shadow); }
-
-    .testimonial-card__quote {
-      font-size: 36px;
-      font-family: var(--font-display);
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .testimonial-card__text {
-      font-size: 14.5px;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .testimonial-card__author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .testimonial-card__avatar {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
-      color: var(--gold);
-      font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 700;
+    .pricing-payments {
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .pricing-payments__label { font-size: 12px; color: rgba(255,255,255,.35); }
+    .pay-badge {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 100px;
+      padding: 6px 14px;
+    }
+    .pay-badge span { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.80); }
+    .pricing-secure {
+      font-size: 12px;
+      color: rgba(255,255,255,.28);
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
     }
 
-    .testimonial-card__name {
+    /* ════════════════════════════════
+       TESTIMONIALS
+    ════════════════════════════════ */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    @media (min-width: 700px) { .testi-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .testi-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 28px 26px;
+      position: relative;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .testi-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+
+    .testi-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 14px;
+      color: var(--gold);
+    }
+    .testi-quote {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: .8;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .testi-text {
       font-size: 14px;
-      font-weight: 600;
-      color: var(--green);
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 20px;
     }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid var(--border-gold);
+    }
+    .testi-name { font-size: 14px; font-weight: 600; color: var(--green); }
+    .testi-role { font-size: 12px; color: var(--text-light); margin-top: 1px; }
 
-    .testimonial-card__role { font-size: 12.5px; color: var(--text-muted); }
-
-    .stars { color: var(--gold); font-size: 13px; margin-bottom: 12px; }
-
-    /* ===== FAQ ===== */
-    .faq__list {
-      max-width: 720px;
+    /* ════════════════════════════════
+       FAQ
+    ════════════════════════════════ */
+    .faq-list {
+      max-width: 700px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
-
     .faq-item {
       background: var(--white);
-      border: 1px solid rgba(26,61,43,.10);
-      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
       overflow: hidden;
       transition: border-color .2s;
     }
-
-    .faq-item--open { border-color: var(--border); }
-
+    .faq-item--open { border-color: var(--border-gold); }
     .faq-item__q {
       width: 100%;
       display: flex;
@@ -684,202 +870,377 @@
       border: none;
       padding: 20px 24px;
       font-family: var(--font-body);
-      font-size: 15.5px;
+      font-size: 15px;
       font-weight: 600;
       color: var(--green);
       text-align: left;
       cursor: pointer;
       transition: color .2s;
     }
-
     .faq-item__q:hover { color: var(--gold-dim); }
-
-    .faq-item__chevron {
-      width: 28px; height: 28px;
+    .faq-chevron {
+      width: 30px; height: 30px;
       border-radius: 50%;
-      background: rgba(26,61,43,.07);
+      background: rgba(26,61,43,.06);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      color: var(--green);
       flex-shrink: 0;
-      transition: transform .3s, background .2s;
+      transition: transform .3s, background .2s, color .2s;
     }
-
-    .faq-item--open .faq-item__chevron {
+    .faq-item--open .faq-chevron {
       transform: rotate(180deg);
-      background: rgba(201,168,76,.15);
+      background: var(--gold-pale);
+      color: var(--gold-dim);
     }
-
-    .faq-item__a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .35s ease;
-    }
-
+    .faq-item__a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
     .faq-item--open .faq-item__a { max-height: 300px; }
-
     .faq-item__a-inner {
       padding: 0 24px 20px;
       font-size: 14.5px;
       color: var(--text-muted);
-      line-height: 1.75;
+      line-height: 1.8;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
     }
 
-    /* ===== CTA BANNER ===== */
+    /* ════════════════════════════════
+       CTA BANNER
+    ════════════════════════════════ */
     .cta-banner {
-      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
-      padding: 80px 0;
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%);
+      padding: 96px 0;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-
     .cta-banner::before {
       content: '';
       position: absolute;
-      top: -60px; right: -60px;
-      width: 300px; height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,.15) 0%, transparent 70%);
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,.04) 1px, transparent 1px);
+      background-size: 48px 48px;
     }
-
-    .cta-banner::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: -40px;
-      width: 250px; height: 250px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,.10) 0%, transparent 70%);
-    }
-
-    .cta-banner__content { position: relative; z-index: 1; }
-
+    .cta-banner__inner { position: relative; z-index: 1; }
     .cta-banner__title {
-      font-size: clamp(28px, 5vw, 48px);
+      font-family: var(--font-display);
+      font-size: clamp(30px, 5vw, 52px);
+      font-weight: 800;
       color: var(--white);
       margin-bottom: 16px;
+      letter-spacing: -.02em;
     }
-
     .cta-banner__sub {
       font-size: 18px;
-      color: rgba(255,255,255,.70);
+      color: rgba(255,255,255,.60);
       margin-bottom: 40px;
       font-weight: 300;
+      max-width: 520px;
+      margin-left: auto; margin-right: auto;
     }
+    .cta-banner__guarantee {
+      margin-top: 18px;
+      font-size: 13px;
+      color: rgba(255,255,255,.38);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .cta-banner__guarantee svg { color: rgba(201,168,76,.55); }
 
-    /* ===== FOOTER ===== */
+    /* ════════════════════════════════
+       FOOTER
+    ════════════════════════════════ */
     .footer {
-      background: var(--green-dark);
-      padding: 56px 0 32px;
-      color: rgba(255,255,255,.65);
+      background: var(--green-deep);
+      padding: 60px 0 32px;
+      color: rgba(255,255,255,.55);
     }
-
     .footer__top {
       display: grid;
       grid-template-columns: 1fr;
       gap: 40px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      margin-bottom: 32px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      margin-bottom: 28px;
     }
-
-    @media (min-width: 700px) {
-      .footer__top { grid-template-columns: 2fr 1fr 1fr; }
-    }
+    @media (min-width: 700px) { .footer__top { grid-template-columns: 2fr 1fr 1fr; } }
 
     .footer__logo {
       font-family: var(--font-display);
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 700;
       color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 10px;
       margin-bottom: 12px;
     }
-
     .footer__logo span { color: var(--gold); }
-
-    .footer__desc { font-size: 14px; line-height: 1.7; max-width: 300px; }
-
+    .footer__desc { font-size: 14px; line-height: 1.75; max-width: 280px; }
     .footer__heading {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: .12em;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-dim);
       margin-bottom: 16px;
     }
-
     .footer__links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-
-    .footer__links a {
-      font-size: 14px;
-      color: rgba(255,255,255,.60);
-      transition: color .2s;
-    }
-
+    .footer__links a { font-size: 14px; color: rgba(255,255,255,.50); transition: color .2s; }
     .footer__links a:hover { color: var(--gold-light); }
-
     .footer__bottom {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       font-size: 13px;
     }
 
-    /* ===== TOAST ===== */
+    /* ════════════════════════════════
+       TOAST
+    ════════════════════════════════ */
     #toast {
       position: fixed;
-      bottom: 32px; right: 24px;
+      bottom: 28px; right: 20px;
       z-index: 9999;
       background: var(--green);
       color: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 22px;
+      border: 1px solid var(--border-gold);
+      border-radius: var(--r-md);
+      padding: 14px 20px;
       font-size: 14px;
       font-weight: 500;
       box-shadow: var(--shadow-lg);
-      transform: translateY(120%);
+      transform: translateY(140%);
       transition: transform .3s cubic-bezier(.34,1.56,.64,1);
-      max-width: 320px;
+      max-width: 300px;
     }
-
     #toast.show { transform: translateY(0); }
-    #toast.error { background: #7a1a1a; border-color: #c0392b; }
+    #toast.error { background: #6b1a1a; border-color: rgba(200,60,60,.4); }
 
-    /* ===== LOADING SPINNER ===== */
-    .spinner {
+    /* ════════════════════════════════
+       MODAL
+    ════════════════════════════════ */
+    #checkout-modal {
       display: none;
-      width: 18px; height: 18px;
-      border: 2px solid rgba(26,61,43,.3);
-      border-top-color: var(--green-dark);
-      border-radius: 50%;
-      animation: spin .7s linear infinite;
-      flex-shrink: 0;
+      position: fixed; inset: 0;
+      z-index: 1000;
+      background: rgba(10,25,16,.80);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
     }
+    .modal-box {
+      background: var(--white);
+      border-radius: var(--r-xl);
+      width: 100%;
+      max-width: 460px;
+      padding: 36px 32px;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      background: rgba(26,61,43,.07);
+      border: none; border-radius: 50%;
+      width: 32px; height: 32px;
+      cursor: pointer;
+      font-size: 20px;
+      color: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .modal-close:hover { background: rgba(26,61,43,.14); }
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+    .modal-sub {
+      font-size: 13px;
+      color: var(--gold-dim);
+      font-weight: 600;
+      letter-spacing: .04em;
+      margin-bottom: 24px;
+    }
+    .field-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 6px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .field-input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid rgba(26,61,43,.14);
+      border-radius: var(--r-sm);
+      font-size: 14px;
+      font-family: var(--font-body);
+      outline: none;
+      transition: border-color .2s;
+      color: var(--text);
+      background: var(--white);
+    }
+    .field-input:focus { border-color: var(--gold); }
+    .field-select {
+      padding: 12px 10px;
+      border: 1.5px solid rgba(26,61,43,.14);
+      border-radius: var(--r-sm);
+      font-size: 13px;
+      font-family: var(--font-body);
+      outline: none;
+      background: var(--white);
+      color: var(--green);
+      cursor: pointer;
+      min-width: 112px;
+    }
+    .field-select:focus { border-color: var(--gold); }
 
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .btn.loading .spinner { display: block; }
-    .btn.loading .btn-text { opacity: .7; }
-
-    /* ===== RESPONSIVE ===== */
+    /* ════════════════════════════════
+       RESPONSIVE UTILS
+    ════════════════════════════════ */
+    .text-center { text-align: center; }
     @media (max-width: 480px) {
-      .section { padding: 72px 0; }
-      .hero__cta-group { flex-direction: column; align-items: stretch; }
-      .hero__proof { gap: 24px; }
-      .pricing-card { padding: 28px 22px; }
+      .section { padding: 76px 0; }
+      .hero__cta-row { flex-direction: column; align-items: stretch; }
+      .hero__pillars { gap: 16px; }
+      .hero__pillar { border-right: none; padding-right: 0; margin-right: 0; }
+      .pricing-card { padding: 32px 24px; }
+      .pricing-amount { font-size: 52px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
-<nav class="nav">
+<!-- SVG SPRITE (hidden) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- check-circle -->
+  <symbol id="ic-check" viewBox="0 0 20 20" fill="none">
+    <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M6.5 10l2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <!-- check simple -->
+  <symbol id="ic-check-sm" viewBox="0 0 12 12" fill="none">
+    <path d="M2 6l3 3 5-5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <!-- lock -->
+  <symbol id="ic-lock" viewBox="0 0 20 20" fill="none">
+    <rect x="4" y="9" width="12" height="9" rx="2.5" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M7 9V6.5a3 3 0 0 1 6 0V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="10" cy="13.5" r="1.2" fill="currentColor"/>
+  </symbol>
+  <!-- infinity / lifetime -->
+  <symbol id="ic-infinity" viewBox="0 0 20 20" fill="none">
+    <path d="M4.5 10c0-1.93 1.57-3.5 3.5-3.5 1.5 0 2.5 1 3 1.75.5-.75 1.5-1.75 3-1.75 1.93 0 3.5 1.57 3.5 3.5S15.43 13.5 13.5 13.5c-1.5 0-2.5-1-3-1.75-.5.75-1.5 1.75-3 1.75C4.57 13.5 3 11.93 3 10h1.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+  <!-- bolt / instant -->
+  <symbol id="ic-bolt" viewBox="0 0 20 20" fill="none">
+    <path d="M11 3L5 11h6l-2 6 8-9h-5.5L11 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  </symbol>
+  <!-- search -->
+  <symbol id="ic-search" viewBox="0 0 20 20" fill="none">
+    <circle cx="9" cy="9" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+  <!-- handshake -->
+  <symbol id="ic-handshake" viewBox="0 0 20 20" fill="none">
+    <path d="M2 9l3.5-3.5 2.5 2.5H11l4-3 3 3-4.5 5-2.5-2.5H9l-3 3.5L2 9z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  </symbol>
+  <!-- package / box -->
+  <symbol id="ic-box" viewBox="0 0 20 20" fill="none">
+    <path d="M10 2.5L17.5 6.5V13.5L10 17.5L2.5 13.5V6.5L10 2.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M10 2.5V17.5M2.5 6.5L10 10.5L17.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M6 4.5L14 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+  <!-- store / shop -->
+  <symbol id="ic-store" viewBox="0 0 20 20" fill="none">
+    <path d="M3 8.5h14M3 8.5L4.5 4h11L17 8.5M3 8.5v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="8" y="12" width="4" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/>
+  </symbol>
+  <!-- cursor / convert -->
+  <symbol id="ic-cursor" viewBox="0 0 20 20" fill="none">
+    <path d="M4 3l12 7-6.5 1.5L8 18 4 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  </symbol>
+  <!-- megaphone / ads -->
+  <symbol id="ic-megaphone" viewBox="0 0 20 20" fill="none">
+    <path d="M14 4.5C14 4.5 11 6.5 7 7H5a2 2 0 0 0 0 4h.5l1 4.5h2L8 11c3 .5 6 2.5 6 2.5V4.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M16 7.5a3 3 0 0 1 0 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+  <!-- bar chart -->
+  <symbol id="ic-chart" viewBox="0 0 20 20" fill="none">
+    <rect x="3" y="11" width="3.5" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+    <rect x="8.25" y="7" width="3.5" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/>
+    <rect x="13.5" y="3" width="3.5" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/>
+  </symbol>
+  <!-- target -->
+  <symbol id="ic-target" viewBox="0 0 20 20" fill="none">
+    <circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/>
+    <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+    <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+  </symbol>
+  <!-- globe -->
+  <symbol id="ic-globe" viewBox="0 0 20 20" fill="none">
+    <circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M10 2.5c-2 2.5-2 5-2 7.5s0 5 2 7.5M10 2.5c2 2.5 2 5 2 7.5s0 5-2 7.5M2.5 10h15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M3.5 6.5h13M3.5 13.5h13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+  <!-- phone -->
+  <symbol id="ic-phone" viewBox="0 0 20 20" fill="none">
+    <rect x="6" y="2" width="8" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M9.5 15h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+  <!-- users -->
+  <symbol id="ic-users" viewBox="0 0 20 20" fill="none">
+    <circle cx="8" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M2 17c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M13.5 5a2.5 2.5 0 0 1 0 5M17 17c0-2.5-1.5-4-3.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+  <!-- star filled -->
+  <symbol id="ic-star" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M8 1l1.796 3.639 4.013.584-2.904 2.83.686 3.997L8 10.25l-3.591 1.8.686-3.997-2.904-2.83 4.013-.584L8 1z"/>
+  </symbol>
+  <!-- chevron down -->
+  <symbol id="ic-chevron" viewBox="0 0 20 20" fill="none">
+    <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <!-- arrow right -->
+  <symbol id="ic-arrow" viewBox="0 0 20 20" fill="none">
+    <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <!-- flame -->
+  <symbol id="ic-flame" viewBox="0 0 20 20" fill="none">
+    <path d="M10 2c0 0 4 3.5 4 7.5a4 4 0 0 1-8 0C6 7 7.5 5.5 7.5 5.5S7 8 9 8.5C9 6 10 2 10 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <!-- shield -->
+  <symbol id="ic-shield" viewBox="0 0 20 20" fill="none">
+    <path d="M10 2.5L3.5 5v5c0 3.5 2.8 6.5 6.5 7.5 3.7-1 6.5-4 6.5-7.5V5L10 2.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <!-- Africa continent (simplified) -->
+  <symbol id="ic-africa" viewBox="0 0 20 20" fill="none">
+    <path d="M7 2.5h5.5l1.5 2-1 2 1.5 2-1 3-2 3-2 2.5-3-1L6 14l-1-3 .5-3L4 5.5 5.5 3 7 2.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<!-- ═══════════════════════════════
+     NAV
+═══════════════════════════════ -->
+<nav class="nav" id="main-nav">
   <div class="container nav__inner">
-    <a href="#" class="nav__logo" style="text-decoration:none;">
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+    <a href="#" class="nav__logo">
+      <svg width="34" height="34" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
         <rect width="36" height="36" rx="10" fill="#C9A84C"/>
         <path d="M18 6L22.5 14H13.5L18 6Z" fill="#1a3d2b"/>
         <path d="M10 16h16v2H10z" fill="#1a3d2b" opacity=".4"/>
@@ -888,222 +1249,255 @@
       </svg>
       <span><span class="nav__logo-accent">Afrika</span> Digital Academy</span>
     </a>
-    <a href="#pricing" class="btn btn-primary nav__cta">Voir les formations →</a>
+    <a href="#pricing" class="btn btn-primary nav__cta" onclick="fbq('track','ViewContent')">
+      Se former maintenant
+      <svg width="16" height="16"><use href="#ic-arrow"/></svg>
+    </a>
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
+<!-- ═══════════════════════════════
+     HERO
+═══════════════════════════════ -->
 <section class="hero">
-  <div class="container" style="display:flex; align-items:center; gap:48px;">
-    <div class="hero__content" style="flex:1; min-width:0;">
-      <div class="hero__badge">
-        <span class="hero__badge-dot"></span>
-        Formations certifiées · Marché africain
-      </div>
-      <h1 class="hero__title">
-        Lance ton business<br/>
-        e-commerce et<br/>
-        <em>vends partout en Afrique</em>
-      </h1>
-      <p class="hero__sub">
-        Tu veux lancer ton e-commerce mais tu te perds entre mille tutos qui ne parlent pas de ta réalité ? Cette formation te donne une méthode complète — produits, fournisseurs, boutique, publicité — dans l'ordre, de A à Z, adaptée au marché africain.
-      </p>
-      <div class="hero__cta-group">
-        <a href="#pricing" class="btn btn-primary btn-lg" onclick="fbq('track','ViewContent')">
-          Je veux me former →
-        </a>
-        <a href="#learn" class="btn btn-outline">
-          Découvrir le programme
-        </a>
-      </div>
-      <p style="font-size:13px; color:rgba(255,255,255,.55); margin-top:-8px; margin-bottom:32px;">
-        🔒 Garantie remboursement 7 jours — Accès immédiat après paiement
-      </p>
-      <div class="hero__proof">
-        <div class="hero__stat">
-          <span class="hero__stat-num">A→Z</span>
-          <span class="hero__stat-label">Formation complète</span>
+  <div class="hero__fade"></div>
+  <div class="container">
+    <div class="hero__inner">
+      <!-- Left -->
+      <div>
+        <div class="hero__badge">
+          <span class="hero__badge-pulse"></span>
+          Formation e-commerce · Marché africain
         </div>
-        <div class="hero__stat">
-          <span class="hero__stat-num">✓</span>
-          <span class="hero__stat-label">Méthode testée Afrique</span>
+        <h1 class="hero__title">
+          Lance ton business<br/>
+          e-commerce et<br/>
+          <em>vends partout<br/>en Afrique</em>
+        </h1>
+        <p class="hero__sub">
+          Tu veux lancer ton e-commerce mais tu te perds entre mille tutos qui ne parlent pas de ta réalité ? Cette formation te donne une méthode complète — produits, fournisseurs, boutique, publicité — dans l'ordre, de&nbsp;A&nbsp;à&nbsp;Z, adaptée au marché africain.
+        </p>
+        <div class="hero__cta-row">
+          <a href="#pricing" class="btn btn-primary btn-lg" onclick="fbq('track','ViewContent')">
+            <span class="btn-text">Je veux me former</span>
+            <svg width="18" height="18"><use href="#ic-arrow"/></svg>
+          </a>
+          <a href="#learn" class="btn btn-ghost">
+            Voir le programme
+          </a>
         </div>
-        <div class="hero__stat">
-          <span class="hero__stat-num">⚡</span>
-          <span class="hero__stat-label">Accès immédiat</span>
+        <div class="hero__guarantee">
+          <svg width="14" height="14"><use href="#ic-shield"/></svg>
+          Garantie remboursement 7 jours — Accès immédiat après paiement
+        </div>
+        <div class="hero__pillars">
+          <div class="hero__pillar">
+            <div class="hero__pillar-icon">
+              <svg width="18" height="18"><use href="#ic-target"/></svg>
+            </div>
+            <div>
+              <div class="hero__pillar-label">Formation A → Z</div>
+              <div class="hero__pillar-sub">3 modules complets</div>
+            </div>
+          </div>
+          <div class="hero__pillar">
+            <div class="hero__pillar-icon">
+              <svg width="18" height="18"><use href="#ic-africa"/></svg>
+            </div>
+            <div>
+              <div class="hero__pillar-label">Méthode africaine</div>
+              <div class="hero__pillar-sub">Testée sur le terrain</div>
+            </div>
+          </div>
+          <div class="hero__pillar">
+            <div class="hero__pillar-icon">
+              <svg width="18" height="18"><use href="#ic-bolt"/></svg>
+            </div>
+            <div>
+              <div class="hero__pillar-label">Accès immédiat</div>
+              <div class="hero__pillar-sub">Dès la confirmation</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Hero photo -->
-    <div class="hero__illustration" style="flex:0 0 420px; display:none; position:relative;">
-      <div style="border-radius:24px; overflow:hidden; box-shadow:0 24px 64px rgba(0,0,0,.45); position:relative;">
-        <img
-          src="https://images.pexels.com/photos/3874040/pexels-photo-3874040.jpeg?auto=compress&cs=tinysrgb&w=840&h=700&fit=crop"
-          alt="Entrepreneur africain au téléphone et laptop"
-          style="width:100%; display:block; height:520px; object-fit:cover;"
-          loading="eager"
-        />
-        <!-- overlay gradient -->
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(16,36,24,.6) 0%,transparent 50%);"></div>
-      </div>
-      <!-- Floating badge 1 -->
-      <div style="position:absolute; top:28px; left:-24px; background:#C9A84C; color:#1a3d2b; border-radius:14px; padding:10px 16px; font-size:13px; font-weight:700; box-shadow:0 8px 24px rgba(201,168,76,.45); white-space:nowrap;">
-        🚀 Méthode testée sur le marché africain
-      </div>
-      <!-- Floating badge 2 -->
-      <div style="position:absolute; bottom:40px; right:-20px; background:#1a3d2b; border:1.5px solid #C9A84C; color:white; border-radius:14px; padding:10px 16px; font-size:12px; font-weight:600; box-shadow:0 8px 24px rgba(0,0,0,.4);">
-        ⚡ Accès immédiat après paiement
+
+      <!-- Right: photo -->
+      <div class="hero__visual">
+        <div class="hero__img-wrap">
+          <img
+            src="https://images.pexels.com/photos/3874040/pexels-photo-3874040.jpeg?auto=compress&cs=tinysrgb&w=840&h=700&fit=crop"
+            alt="Entrepreneur africain au téléphone et laptop"
+            loading="eager"
+            width="420" height="520"
+          />
+          <div class="hero__img-overlay"></div>
+        </div>
+        <div class="hero__float hero__float--gold">
+          <svg width="16" height="16" color="#1a3d2b"><use href="#ic-africa"/></svg>
+          Méthode testée sur le marché africain
+        </div>
+        <div class="hero__float hero__float--dark">
+          <svg width="15" height="15" color="#C9A84C"><use href="#ic-bolt"/></svg>
+          Accès immédiat après paiement
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<style>
-  @media (min-width: 900px) { .hero__illustration { display:block !important; } }
-</style>
-
-<!-- ===== TRUST BAR ===== -->
+<!-- ═══════════════════════════════
+     TRUST BAR
+═══════════════════════════════ -->
 <div class="trust-bar">
   <div class="container trust-bar__inner">
     <div class="trust-item">
-      <div class="trust-item__icon">✓</div>
+      <div class="trust-item__icon">
+        <svg width="16" height="16"><use href="#ic-bolt"/></svg>
+      </div>
       Accès immédiat après paiement
     </div>
-    <div class="trust-item" style="gap:6px;">
-      <svg width="30" height="18" viewBox="0 0 34 20" fill="none"><rect width="34" height="20" rx="4" fill="#1B4FCC"/><path d="M5 6 L8.5 14 L12 8 L15.5 14 L19 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><text x="23" y="14" font-family="Arial" font-weight="800" font-size="8" fill="white">W</text></svg>
-      <svg width="30" height="18" viewBox="0 0 34 20" fill="none"><rect width="34" height="20" rx="4" fill="#FF6600"/><circle cx="10" cy="10" r="5.5" stroke="white" stroke-width="2" fill="none"/><circle cx="10" cy="10" r="1.8" fill="white"/><text x="19" y="14.5" font-family="Arial" font-weight="800" font-size="7.5" fill="white">OM</text></svg>
-      <span>Wave &amp; Orange Money</span>
+    <div class="trust-item">
+      <div class="trust-item__icon" style="background:none; border:none; gap:4px; width:auto; height:auto; display:flex;">
+        <svg width="34" height="20" viewBox="0 0 34 20" fill="none"><rect width="34" height="20" rx="4" fill="#1B4FCC"/><path d="M5 6L8.5 14 12 8l3.5 6L19 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><text x="23" y="14" font-family="Arial" font-weight="800" font-size="8" fill="white">W</text></svg>
+        <svg width="34" height="20" viewBox="0 0 34 20" fill="none"><rect width="34" height="20" rx="4" fill="#FF6600"/><circle cx="10" cy="10" r="5.5" stroke="white" stroke-width="2" fill="none"/><circle cx="10" cy="10" r="1.8" fill="white"/><text x="19" y="14.5" font-family="Arial" font-weight="800" font-size="7.5" fill="white">OM</text></svg>
+      </div>
+      Wave &amp; Orange Money
     </div>
     <div class="trust-item">
-      <div class="trust-item__icon">🔒</div>
+      <div class="trust-item__icon">
+        <svg width="16" height="16"><use href="#ic-lock"/></svg>
+      </div>
       Paiement 100% sécurisé
     </div>
     <div class="trust-item">
-      <div class="trust-item__icon">♾️</div>
+      <div class="trust-item__icon">
+        <svg width="16" height="16"><use href="#ic-infinity"/></svg>
+      </div>
       Accès à vie au contenu
     </div>
   </div>
 </div>
 
-<!-- ===== CE QUE TU VAS APPRENDRE ===== -->
-<section id="learn" class="section section--alt">
-  <div class="container text-center">
-    <span class="tag">Programme</span>
-    <h2 class="section-title">Ce que tu vas maîtriser</h2>
-    <p class="section-sub">Un programme complet, du débutant au vendeur professionnel, pensé pour le contexte africain.</p>
-    <div class="learn__grid">
-      <div class="learn__item">
-        <div class="learn__icon">🔍</div>
+<!-- ═══════════════════════════════
+     CE QUE TU VAS MAÎTRISER
+═══════════════════════════════ -->
+<section id="learn" class="section section--cream">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Compétences</span>
+      <h2 class="sec-title">Ce que tu vas maîtriser</h2>
+      <p class="sec-sub">Un programme complet, du débutant au vendeur professionnel, pensé pour le contexte africain.</p>
+    </div>
+    <div class="learn-grid">
+      <div class="learn-item reveal reveal-delay-1">
+        <div class="learn-item__icon"><svg width="20" height="20"><use href="#ic-search"/></svg></div>
         <div>
-          <div class="learn__item-title">Trouver des produits gagnants</div>
-          <div class="learn__item-desc">Identifier les produits qui se vendent sur le marché africain, avant d'investir.</div>
+          <div class="learn-item__title">Trouver des produits gagnants</div>
+          <div class="learn-item__desc">Identifier les produits qui se vendent sur le marché africain, avant d'investir.</div>
         </div>
       </div>
-      <div class="learn__item">
-        <div class="learn__icon">🤝</div>
+      <div class="learn-item reveal reveal-delay-2">
+        <div class="learn-item__icon"><svg width="20" height="20"><use href="#ic-handshake"/></svg></div>
         <div>
-          <div class="learn__item-title">Sourcer chez des fournisseurs fiables</div>
-          <div class="learn__item-desc">Trouver des fournisseurs locaux sérieux et commander depuis la Chine sans se faire arnaquer.</div>
+          <div class="learn-item__title">Sourcer chez des fournisseurs fiables</div>
+          <div class="learn-item__desc">Trouver des fournisseurs locaux sérieux et commander depuis la Chine sans se faire arnaquer.</div>
         </div>
       </div>
-      <div class="learn__item">
-        <div class="learn__icon">📦</div>
+      <div class="learn-item reveal reveal-delay-1">
+        <div class="learn-item__icon"><svg width="20" height="20"><use href="#ic-box"/></svg></div>
         <div>
-          <div class="learn__item-title">Importer depuis la Chine</div>
-          <div class="learn__item-desc">Commande, suivi, dédouanement — les étapes concrètes pour recevoir ta marchandise.</div>
+          <div class="learn-item__title">Importer depuis la Chine</div>
+          <div class="learn-item__desc">Commande, suivi, dédouanement — les étapes concrètes pour recevoir ta marchandise.</div>
         </div>
       </div>
-      <div class="learn__item">
-        <div class="learn__icon">🛒</div>
+      <div class="learn-item reveal reveal-delay-2">
+        <div class="learn-item__icon"><svg width="20" height="20"><use href="#ic-store"/></svg></div>
         <div>
-          <div class="learn__item-title">Créer ta boutique YouCan de A à Z</div>
-          <div class="learn__item-desc">Créer et configurer ta boutique YouCan de A à Z — la plateforme pensée pour le marché africain.</div>
+          <div class="learn-item__title">Créer ta boutique YouCan de A à Z</div>
+          <div class="learn-item__desc">La plateforme pensée pour le marché africain — configuration complète, pas à pas.</div>
         </div>
       </div>
-      <div class="learn__item">
-        <div class="learn__icon">💡</div>
+      <div class="learn-item reveal reveal-delay-1">
+        <div class="learn-item__icon"><svg width="20" height="20"><use href="#ic-cursor"/></svg></div>
         <div>
-          <div class="learn__item-title">Configurer une page produit qui convertit</div>
-          <div class="learn__item-desc">Structure, texte, visuels — une fiche produit conçue pour déclencher l'achat.</div>
+          <div class="learn-item__title">Configurer une page produit qui convertit</div>
+          <div class="learn-item__desc">Structure, texte, visuels — une fiche produit conçue pour déclencher l'achat.</div>
         </div>
       </div>
-      <div class="learn__item">
-        <div class="learn__icon">📣</div>
+      <div class="learn-item reveal reveal-delay-2">
+        <div class="learn-item__icon"><svg width="20" height="20"><use href="#ic-megaphone"/></svg></div>
         <div>
-          <div class="learn__item-title">Lancer des publicités Facebook Ads</div>
-          <div class="learn__item-desc">Créer des vidéos pub, configurer le Pixel et lancer une campagne de testing rentable.</div>
+          <div class="learn-item__title">Lancer des publicités Facebook Ads</div>
+          <div class="learn-item__desc">Créer des vidéos pub, configurer le Pixel et lancer une campagne de testing rentable.</div>
         </div>
       </div>
-      <div class="learn__item">
-        <div class="learn__icon">📊</div>
+      <div class="learn-item reveal reveal-delay-1">
+        <div class="learn-item__icon"><svg width="20" height="20"><use href="#ic-chart"/></svg></div>
         <div>
-          <div class="learn__item-title">Analyser et optimiser ses campagnes</div>
-          <div class="learn__item-desc">Lire les bons indicateurs et ajuster pour réduire le coût par achat.</div>
+          <div class="learn-item__title">Analyser et optimiser ses campagnes</div>
+          <div class="learn-item__desc">Lire les bons indicateurs et ajuster pour réduire le coût par achat.</div>
         </div>
       </div>
-      <div class="learn__item">
-        <div class="learn__icon">🎯</div>
+      <div class="learn-item reveal reveal-delay-2">
+        <div class="learn-item__icon"><svg width="20" height="20"><use href="#ic-target"/></svg></div>
         <div>
-          <div class="learn__item-title">Étude de cas réelle</div>
-          <div class="learn__item-desc">Voir une vraie campagne gagnante décortiquée — produit, pub, résultats, leçons.</div>
+          <div class="learn-item__title">Étude de cas réelle</div>
+          <div class="learn-item__desc">Voir une vraie campagne gagnante décortiquée — produit, pub, résultats, leçons.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== ABOUT VISUAL ===== -->
-<section class="section" style="padding:72px 0;">
+<!-- ═══════════════════════════════
+     MISSION / ABOUT
+═══════════════════════════════ -->
+<section class="section">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr; gap:48px; align-items:center;" class="about-grid">
-      <!-- Photo grid -->
-      <div style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:240px 200px; gap:12px; border-radius:24px; overflow:hidden;">
-        <div style="grid-row:1/3; border-radius:16px; overflow:hidden;">
-          <img src="https://images.pexels.com/photos/6585022/pexels-photo-6585022.jpeg?auto=compress&cs=tinysrgb&w=600&h=460&fit=crop"
-            alt="Entrepreneur avec laptop" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy"/>
+    <div class="about-grid">
+      <!-- Photos -->
+      <div class="about-photos reveal">
+        <div class="about-photo about-photo--tall">
+          <img src="https://images.pexels.com/photos/6585022/pexels-photo-6585022.jpeg?auto=compress&cs=tinysrgb&w=600&h=460&fit=crop" alt="Entrepreneur avec laptop" loading="lazy"/>
         </div>
-        <div style="border-radius:16px; overflow:hidden;">
-          <img src="https://images.pexels.com/photos/9301461/pexels-photo-9301461.jpeg?auto=compress&cs=tinysrgb&w=500&h=250&fit=crop"
-            alt="Équipe startup africaine" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy"/>
+        <div class="about-photo">
+          <img src="https://images.pexels.com/photos/9301461/pexels-photo-9301461.jpeg?auto=compress&cs=tinysrgb&w=500&h=250&fit=crop" alt="Startup africaine" loading="lazy"/>
         </div>
-        <div style="border-radius:16px; overflow:hidden; position:relative;">
-          <img src="https://images.pexels.com/photos/7550279/pexels-photo-7550279.jpeg?auto=compress&cs=tinysrgb&w=500&h=210&fit=crop"
-            alt="Entrepreneur tablette" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy"/>
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(16,36,24,.55) 0%,transparent 60%);display:flex;align-items:flex-end;padding:14px;">
-            <span style="color:#C9A84C;font-weight:700;font-size:14px;">Méthode testée · Marché africain</span>
-          </div>
+        <div class="about-photo">
+          <img src="https://images.pexels.com/photos/7550279/pexels-photo-7550279.jpeg?auto=compress&cs=tinysrgb&w=500&h=210&fit=crop" alt="Entrepreneur tablette" loading="lazy"/>
+          <div class="about-photo__label">Méthode testée · Marché africain</div>
         </div>
       </div>
       <!-- Text -->
-      <div>
+      <div class="reveal reveal-delay-2">
         <span class="tag">Notre mission</span>
-        <h2 class="section-title" style="text-align:left; margin-bottom:20px;">Formé pour le marché africain,<br/>pas pour l'Occident</h2>
-        <p style="color:var(--text-muted); font-size:16px; line-height:1.8; margin-bottom:24px;">
-          La plupart des tutos que tu trouves en ligne sont faits pour l'Europe — ils te montrent des outils que tu ne maîtrises pas dans ton contexte. Ici, on parle de <strong>fournisseurs locaux et chinois accessibles</strong>, de logistique africaine, de publicité Facebook adaptée à notre marché.
+        <h2 class="sec-title" style="text-align:left; margin-bottom:20px;">Formé pour le marché africain,<br/>pas pour l'Occident</h2>
+        <p style="color:var(--text-muted); font-size:16px; line-height:1.85; margin-bottom:20px;">
+          La plupart des tutos que tu trouves en ligne sont faits pour l'Europe — ils te montrent des outils que tu ne maîtrises pas dans ton contexte. Ici, on parle de <strong style="color:var(--green); font-weight:600;">fournisseurs locaux et chinois accessibles</strong>, de logistique africaine, de publicité Facebook adaptée à notre marché.
         </p>
-        <p style="color:var(--text-muted); font-size:16px; line-height:1.8; margin-bottom:32px;">
+        <p style="color:var(--text-muted); font-size:16px; line-height:1.85; margin-bottom:32px;">
           Une méthode construite pour notre réalité, pas importée. Des étapes concrètes, dans l'ordre, pour passer de zéro à une boutique qui vend.
         </p>
-        <div style="display:flex; flex-wrap:wrap; gap:12px;">
-          <div style="display:flex; align-items:center; gap:10px; background:rgba(26,61,43,.06); border-radius:10px; padding:12px 18px;">
-            <span style="font-size:22px;">🌍</span>
+        <div class="about-badges">
+          <div class="about-badge">
+            <div class="about-badge__icon"><svg width="18" height="18"><use href="#ic-globe"/></svg></div>
             <div>
-              <div style="font-size:13px; font-weight:700; color:var(--green);">Adapté à l'Afrique</div>
-              <div style="font-size:12px; color:var(--text-muted);">Méthodes locales</div>
+              <div class="about-badge__title">Adapté à l'Afrique</div>
+              <div class="about-badge__sub">Méthodes locales</div>
             </div>
           </div>
-          <div style="display:flex; align-items:center; gap:10px; background:rgba(26,61,43,.06); border-radius:10px; padding:12px 18px;">
-            <span style="font-size:22px;">📱</span>
+          <div class="about-badge">
+            <div class="about-badge__icon"><svg width="18" height="18"><use href="#ic-phone"/></svg></div>
             <div>
-              <div style="font-size:13px; font-weight:700; color:var(--green);">Mobile-first</div>
-              <div style="font-size:12px; color:var(--text-muted);">Wave & Orange Money</div>
+              <div class="about-badge__title">Mobile-first</div>
+              <div class="about-badge__sub">Wave &amp; Orange Money</div>
             </div>
           </div>
-          <div style="display:flex; align-items:center; gap:10px; background:rgba(26,61,43,.06); border-radius:10px; padding:12px 18px;">
-            <span style="font-size:22px;">🤝</span>
+          <div class="about-badge">
+            <div class="about-badge__icon"><svg width="18" height="18"><use href="#ic-users"/></svg></div>
             <div>
-              <div style="font-size:13px; font-weight:700; color:var(--green);">Communauté active</div>
-              <div style="font-size:12px; color:var(--text-muted);">Groupe WhatsApp privé</div>
+              <div class="about-badge__title">Communauté active</div>
+              <div class="about-badge__sub">Groupe WhatsApp privé</div>
             </div>
           </div>
         </div>
@@ -1111,53 +1505,52 @@
     </div>
   </div>
 </section>
-<style>
-  @media (min-width: 800px) {
-    .about-grid { grid-template-columns: 1fr 1fr !important; }
-  }
-</style>
 
-<!-- ===== PROGRAMME ===== -->
-<section class="section">
-  <div class="container text-center">
-    <span class="tag">Modules</span>
-    <h2 class="section-title">Le programme détaillé</h2>
-    <p class="section-sub">3 modules complets pour passer de zéro à une boutique qui vend, de A à Z.</p>
-    <div class="programme__list">
-      <div class="module">
-        <div class="module__num">1</div>
-        <div>
-          <div class="module__title">Produits &amp; Fournisseurs</div>
-          <div class="module__desc">Trouve les bons produits et les bons partenaires avant d'investir un seul franc.</div>
-          <ul class="module__lessons">
-            <li>Trouver des produits gagnants sur le marché africain</li>
-            <li>Identifier des fournisseurs locaux fiables</li>
-            <li>Commander en Chine sans se faire arnaquer</li>
+<!-- ═══════════════════════════════
+     PROGRAMME
+═══════════════════════════════ -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Modules</span>
+      <h2 class="sec-title">Le programme détaillé</h2>
+      <p class="sec-sub">3 modules complets pour passer de zéro à une boutique qui vend, de A à Z.</p>
+    </div>
+    <div class="modules">
+      <div class="module-card reveal">
+        <div class="module-card__num">1</div>
+        <div class="module-card__body">
+          <div class="module-card__title">Produits &amp; Fournisseurs</div>
+          <div class="module-card__desc">Trouve les bons produits et les bons partenaires avant d'investir un seul franc.</div>
+          <ul class="module-lessons">
+            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Trouver des produits gagnants sur le marché africain</li>
+            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Identifier des fournisseurs locaux fiables</li>
+            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Commander en Chine sans se faire arnaquer</li>
           </ul>
         </div>
       </div>
-      <div class="module">
-        <div class="module__num">2</div>
-        <div>
-          <div class="module__title">Créer sa boutique professionnelle de A à Z</div>
-          <div class="module__desc">Lance une boutique YouCan complète, prête à vendre, sans compétence technique.</div>
-          <ul class="module__lessons">
-            <li>Inscription et configuration de YouCan</li>
-            <li>Nom de domaine et logo</li>
-            <li>Créer une page produit qui convertit</li>
+      <div class="module-card reveal reveal-delay-1">
+        <div class="module-card__num">2</div>
+        <div class="module-card__body">
+          <div class="module-card__title">Créer sa boutique professionnelle de A à Z</div>
+          <div class="module-card__desc">Lance une boutique YouCan complète, prête à vendre, sans compétence technique.</div>
+          <ul class="module-lessons">
+            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Inscription et configuration de YouCan</li>
+            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Nom de domaine et logo</li>
+            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Créer une page produit qui convertit</li>
           </ul>
         </div>
       </div>
-      <div class="module">
-        <div class="module__num">3</div>
-        <div>
-          <div class="module__title">Maîtriser la publicité Facebook Ads</div>
-          <div class="module__desc">Attire tes premiers clients avec des publicités efficaces, même avec un petit budget.</div>
-          <ul class="module__lessons">
-            <li>Créer des vidéos pub qui vendent</li>
-            <li>Configurer ton compte publicitaire et le Pixel Facebook</li>
-            <li>Lancer une campagne de testing</li>
-            <li>Étude de cas réelle : une vraie campagne gagnante décortiquée</li>
+      <div class="module-card reveal reveal-delay-2">
+        <div class="module-card__num">3</div>
+        <div class="module-card__body">
+          <div class="module-card__title">Maîtriser la publicité Facebook Ads</div>
+          <div class="module-card__desc">Attire tes premiers clients avec des publicités efficaces, même avec un petit budget.</div>
+          <ul class="module-lessons">
+            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Créer des vidéos pub qui vendent</li>
+            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Configurer ton compte publicitaire et le Pixel Facebook</li>
+            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Lancer une campagne de testing</li>
+            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Étude de cas réelle : une vraie campagne gagnante décortiquée</li>
           </ul>
         </div>
       </div>
@@ -1165,220 +1558,241 @@
   </div>
 </section>
 
-<!-- ===== PRICING ===== -->
-<section id="pricing" class="section section--alt">
-  <div class="container text-center">
-    <span class="tag">Tarif</span>
-    <h2 class="section-title">Une seule offre, complète</h2>
-    <p class="section-sub">Tout ce qu'il faut pour lancer et scaler ton business e-commerce en Afrique.</p>
-
-    <div style="max-width:520px; margin:0 auto;">
-      <div class="pricing-card pricing-card--featured" style="border-radius:24px; padding:48px 40px;">
-        <div class="pricing-badge">🔥 Offre de lancement · Places limitées</div>
-        <div class="pricing-card__name-label" style="margin-top:8px;">Formation e-commerce Afrique 2026</div>
-        <div class="pricing-card__name" style="color:#fff; font-size:34px;">Formation Complète</div>
-        <div class="pricing-price" style="margin:20px 0 28px;">
-          <div class="pricing-price__old">15 000 F CFA</div>
-          <div style="display:flex; align-items:baseline; justify-content:center; gap:8px;">
-            <span class="pricing-price__amount" style="font-size:64px;">10 000</span>
-            <span style="color:rgba(255,255,255,.6); font-size:20px;">F CFA</span>
+<!-- ═══════════════════════════════
+     PRICING
+═══════════════════════════════ -->
+<section id="pricing" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Tarif</span>
+      <h2 class="sec-title">Une seule offre, complète</h2>
+      <p class="sec-sub">Tout ce qu'il faut pour lancer ton business e-commerce en Afrique.</p>
+    </div>
+    <div class="pricing-wrap reveal">
+      <div class="pricing-card">
+        <div class="pricing-card__inner">
+          <div class="pricing-badge-pill">
+            <svg width="14" height="14"><use href="#ic-flame"/></svg>
+            Offre de lancement · Places limitées
           </div>
-          <div style="display:inline-block; background:rgba(201,168,76,.25); border:1px solid rgba(201,168,76,.4); color:#dfc06e; font-size:12px; font-weight:700; letter-spacing:.08em; border-radius:100px; padding:4px 14px; margin-top:8px;">
-            TU ÉCONOMISES 5 000 F CFA
+          <div class="pricing-label">Formation e-commerce Afrique 2026</div>
+          <div class="pricing-name">Formation Complète</div>
+          <div class="pricing-amount-row">
+            <div class="pricing-old">15 000 F CFA</div>
+            <div>
+              <span class="pricing-amount">10 000<span>F CFA</span></span>
+            </div>
+          </div>
+          <div class="pricing-save">TU ÉCONOMISES 5 000 F CFA</div>
+          <hr class="pricing-divider"/>
+          <ul class="pricing-features">
+            <li class="pricing-feature">
+              <span class="pricing-feature__check"><svg width="12" height="12"><use href="#ic-check-sm"/></svg></span>
+              Les 3 modules complets de A à Z
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__check"><svg width="12" height="12"><use href="#ic-check-sm"/></svg></span>
+              Vidéos HD + ressources PDF téléchargeables
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__check"><svg width="12" height="12"><use href="#ic-check-sm"/></svg></span>
+              Étude de cas réelle : vraie campagne gagnante
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__check"><svg width="12" height="12"><use href="#ic-check-sm"/></svg></span>
+              Mises à jour gratuites à vie
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__check"><svg width="12" height="12"><use href="#ic-check-sm"/></svg></span>
+              Accès immédiat après paiement
+            </li>
+            <li class="pricing-feature">
+              <span class="pricing-feature__check"><svg width="12" height="12"><use href="#ic-check-sm"/></svg></span>
+              Garantie remboursement 7 jours
+            </li>
+          </ul>
+          <button class="btn btn-primary btn-xl btn-block checkout-btn" data-product="prd_r9u520m5" data-label="Formation Complète" style="font-size:17px;">
+            <span class="spinner"></span>
+            <span class="btn-text">Je m'inscris maintenant</span>
+            <svg width="18" height="18"><use href="#ic-arrow"/></svg>
+          </button>
+          <div class="pricing-payments">
+            <span class="pricing-payments__label">Payer avec :</span>
+            <div class="pay-badge">
+              <svg width="32" height="19" viewBox="0 0 34 20" fill="none"><rect width="34" height="20" rx="4" fill="#1B4FCC"/><path d="M5 6L8.5 14 12 8l3.5 6L19 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><text x="23" y="14" font-family="Arial" font-weight="800" font-size="8" fill="white">W</text></svg>
+              <span>Wave</span>
+            </div>
+            <div class="pay-badge">
+              <svg width="32" height="19" viewBox="0 0 34 20" fill="none"><rect width="34" height="20" rx="4" fill="#FF6600"/><circle cx="10" cy="10" r="5.5" stroke="white" stroke-width="2" fill="none"/><circle cx="10" cy="10" r="1.8" fill="white"/><text x="19" y="14.5" font-family="Arial" font-weight="800" font-size="7.5" fill="white">OM</text></svg>
+              <span>Orange Money</span>
+            </div>
+          </div>
+          <div class="pricing-secure">
+            <svg width="13" height="13"><use href="#ic-lock"/></svg>
+            Paiement 100% sécurisé
           </div>
         </div>
-        <hr class="pricing-divider" />
-        <ul class="pricing-card__features" style="text-align:left; max-width:340px; margin:0 auto 32px;">
-          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Les 3 modules complets de A à Z</li>
-          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Vidéos HD + ressources PDF téléchargeables</li>
-          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Étude de cas réelle : vraie campagne gagnante</li>
-          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Mises à jour gratuites à vie</li>
-          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Accès immédiat après paiement</li>
-          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>🔒 Garantie remboursement 7 jours</li>
-        </ul>
-        <button class="btn btn-primary btn-block checkout-btn" data-product="prd_r9u520m5" data-label="Formation Complète" style="font-size:18px; padding:22px;">
-          <span class="spinner"></span>
-          <span class="btn-text">Je m'inscris maintenant →</span>
-        </button>
-        <!-- Payment methods -->
-        <div style="margin-top:24px; display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap;">
-          <span style="font-size:12px; color:rgba(255,255,255,.45);">Payer avec :</span>
-          <div style="display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.08); border-radius:100px; padding:7px 16px;">
-            <!-- Logo Wave officiel : fond bleu #1B4FCC, lettre W blanche stylisée -->
-            <svg width="34" height="20" viewBox="0 0 34 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="34" height="20" rx="4" fill="#1B4FCC"/>
-              <path d="M5 6 L8.5 14 L12 8 L15.5 14 L19 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              <text x="23" y="14" font-family="Arial" font-weight="800" font-size="8" fill="white">W</text>
-            </svg>
-            <span style="font-size:13px; font-weight:600; color:white;">Wave</span>
-          </div>
-          <div style="display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.08); border-radius:100px; padding:7px 16px;">
-            <!-- Logo Orange Money : cercle orange, lettre O + point -->
-            <svg width="34" height="20" viewBox="0 0 34 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="34" height="20" rx="4" fill="#FF6600"/>
-              <circle cx="10" cy="10" r="5.5" stroke="white" stroke-width="2" fill="none"/>
-              <circle cx="10" cy="10" r="1.8" fill="white"/>
-              <text x="19" y="14.5" font-family="Arial" font-weight="800" font-size="7.5" fill="white">OM</text>
-            </svg>
-            <span style="font-size:13px; font-weight:600; color:white;">Orange Money</span>
-          </div>
-        </div>
-        <p style="font-size:12px; color:rgba(255,255,255,.35); margin-top:12px;">🔒 Paiement 100% sécurisé</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== TÉMOIGNAGES ===== -->
-<section id="testimonials" class="section">
-  <div class="container text-center">
-    <span class="tag">Témoignages</span>
-    <h2 class="section-title">Ils ont transformé leur vie</h2>
-    <p class="section-sub">Des apprenants de toute l'Afrique de l'Ouest qui ont pris le saut — et ne le regrettent pas.</p>
-    <div class="testimonials__grid">
-
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-card__quote">"</div>
-        <p class="testimonial-card__text">
-          J'avais zéro expérience en e-commerce. La formation m'a guidée étape par étape — j'ai lancé ma boutique et reçu mes premières commandes plus vite que je ne le pensais. Très concret, très actionnable.
-        </p>
-        <div class="testimonial-card__author">
-          <img src="https://images.pexels.com/photos/10375889/pexels-photo-10375889.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop&facepad=2"
-            alt="Fatou Diallo" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;"/>
+<!-- ═══════════════════════════════
+     TÉMOIGNAGES
+═══════════════════════════════ -->
+<section id="testimonials" class="section section--cream">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Témoignages</span>
+      <h2 class="sec-title">Ils ont franchi le pas</h2>
+      <p class="sec-sub">Des apprenants de toute l'Afrique de l'Ouest qui ont pris le saut — et ne le regrettent pas.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="testi-stars">
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+        </div>
+        <span class="testi-quote">"</span>
+        <p class="testi-text">J'avais zéro expérience en e-commerce. La formation m'a guidée étape par étape — j'ai lancé ma boutique et reçu mes premières commandes plus vite que je ne le pensais. Très concret, très actionnable.</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="https://images.pexels.com/photos/10375889/pexels-photo-10375889.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop&facepad=2" alt="Fatou Diallo" width="44" height="44" loading="lazy"/>
           <div>
-            <div class="testimonial-card__name">Fatou Diallo</div>
-            <div class="testimonial-card__role">Vendeuse en ligne · Dakar, Sénégal</div>
+            <div class="testi-name">Fatou Diallo</div>
+            <div class="testi-role">Vendeuse en ligne · Dakar, Sénégal</div>
           </div>
         </div>
       </div>
-
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-card__quote">"</div>
-        <p class="testimonial-card__text">
-          J'avais essayé plusieurs formations en ligne, mais aucune ne parlait de notre réalité — les paiements Wave, la livraison locale. Ici, tout est adapté à ce qu'on vit vraiment en Afrique.
-        </p>
-        <div class="testimonial-card__author">
-          <img src="https://images.pexels.com/photos/6285069/pexels-photo-6285069.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop&facepad=2"
-            alt="Kofi Mensah" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;"/>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="testi-stars">
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+        </div>
+        <span class="testi-quote">"</span>
+        <p class="testi-text">J'avais essayé plusieurs formations en ligne, mais aucune ne parlait de notre réalité — les paiements Wave, la livraison locale. Ici, tout est adapté à ce qu'on vit vraiment en Afrique.</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="https://images.pexels.com/photos/6285069/pexels-photo-6285069.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop&facepad=2" alt="Kofi Mensah" width="44" height="44" loading="lazy"/>
           <div>
-            <div class="testimonial-card__name">Kofi Mensah</div>
-            <div class="testimonial-card__role">Entrepreneur digital · Abidjan, Côte d'Ivoire</div>
+            <div class="testi-name">Kofi Mensah</div>
+            <div class="testi-role">Entrepreneur digital · Abidjan, Côte d'Ivoire</div>
           </div>
         </div>
       </div>
-
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-card__quote">"</div>
-        <p class="testimonial-card__text">
-          Le module Facebook Ads est vraiment bien fait. J'ai suivi les étapes à la lettre, configuré mon Pixel, et mes premières campagnes ont commencé à générer des résultats. Je recommande à 100%.
-        </p>
-        <div class="testimonial-card__author">
-          <img src="https://images.pexels.com/photos/8475183/pexels-photo-8475183.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop&facepad=2"
-            alt="Mamadou Baldé" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;"/>
+      <div class="testi-card reveal reveal-delay-3">
+        <div class="testi-stars">
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+          <svg width="14" height="14"><use href="#ic-star"/></svg>
+        </div>
+        <span class="testi-quote">"</span>
+        <p class="testi-text">Le module Facebook Ads est vraiment bien fait. J'ai suivi les étapes à la lettre, configuré mon Pixel, et mes premières campagnes ont commencé à générer des résultats. Je recommande à 100%.</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="https://images.pexels.com/photos/8475183/pexels-photo-8475183.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop&facepad=2" alt="Mamadou Baldé" width="44" height="44" loading="lazy"/>
           <div>
-            <div class="testimonial-card__name">Mamadou Baldé</div>
-            <div class="testimonial-card__role">Revendeur · Conakry, Guinée</div>
+            <div class="testi-name">Mamadou Baldé</div>
+            <div class="testi-role">Revendeur · Conakry, Guinée</div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
-<section id="faq" class="section section--alt">
-  <div class="container text-center">
-    <span class="tag">FAQ</span>
-    <h2 class="section-title">Questions fréquentes</h2>
-    <p class="section-sub">Tout ce que tu dois savoir avant de te lancer.</p>
-    <div class="faq__list">
-
+<!-- ═══════════════════════════════
+     FAQ
+═══════════════════════════════ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">FAQ</span>
+      <h2 class="sec-title">Questions fréquentes</h2>
+      <p class="sec-sub">Tout ce que tu dois savoir avant de te lancer.</p>
+    </div>
+    <div class="faq-list reveal">
       <div class="faq-item">
         <button class="faq-item__q" aria-expanded="false">
           Est-ce que je dois avoir des connaissances techniques ?
-          <span class="faq-item__chevron">▼</span>
+          <span class="faq-chevron"><svg width="18" height="18"><use href="#ic-chevron"/></svg></span>
         </button>
         <div class="faq-item__a" role="region">
-          <div class="faq-item__a-inner">
-            Non, absolument pas. La formation est conçue pour les débutants complets. Tout est expliqué étape par étape, avec des captures d'écran et des vidéos en français. Si tu sais utiliser un smartphone, tu peux suivre la formation.
-          </div>
+          <div class="faq-item__a-inner">Non, absolument pas. La formation est conçue pour les débutants complets. Tout est expliqué étape par étape, avec des captures d'écran et des vidéos en français. Si tu sais utiliser un smartphone, tu peux suivre la formation.</div>
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-item__q" aria-expanded="false">
           Comment se passe le paiement ?
-          <span class="faq-item__chevron">▼</span>
+          <span class="faq-chevron"><svg width="18" height="18"><use href="#ic-chevron"/></svg></span>
         </button>
         <div class="faq-item__a" role="region">
-          <div class="faq-item__a-inner">
-            Le paiement se fait via Wave ou Orange Money — 100% mobile, 100% sécurisé. Dès que ton paiement est confirmé, tu reçois immédiatement tes accès par email. Pas de carte bancaire requise.
-          </div>
+          <div class="faq-item__a-inner">Le paiement se fait via Wave ou Orange Money — 100% mobile, 100% sécurisé. Dès que ton paiement est confirmé, tu reçois immédiatement tes accès par email. Pas de carte bancaire requise.</div>
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-item__q" aria-expanded="false">
           Combien de temps ai-je accès à la formation ?
-          <span class="faq-item__chevron">▼</span>
+          <span class="faq-chevron"><svg width="18" height="18"><use href="#ic-chevron"/></svg></span>
         </button>
         <div class="faq-item__a" role="region">
-          <div class="faq-item__a-inner">
-            Tu as un accès à vie à tout le contenu, y compris les futures mises à jour. Tu peux avancer à ton propre rythme, revoir les modules autant de fois que tu le souhaites, depuis n'importe quel appareil.
-          </div>
+          <div class="faq-item__a-inner">Tu as un accès à vie à tout le contenu, y compris les futures mises à jour. Tu peux avancer à ton propre rythme, revoir les modules autant de fois que tu le souhaites, depuis n'importe quel appareil.</div>
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-item__q" aria-expanded="false">
           La formation est-elle adaptée à mon pays ?
-          <span class="faq-item__chevron">▼</span>
+          <span class="faq-chevron"><svg width="18" height="18"><use href="#ic-chevron"/></svg></span>
         </button>
         <div class="faq-item__a" role="region">
-          <div class="faq-item__a-inner">
-            Oui ! La formation est spécialement conçue pour le marché africain. On couvre les solutions de paiement (Wave, Orange Money, MTN MoMo), les partenaires logistiques locaux, et les stratégies marketing adaptées à chaque pays d'Afrique de l'Ouest.
-          </div>
+          <div class="faq-item__a-inner">Oui. La formation est conçue pour le marché africain. On couvre les solutions de paiement (Wave, Orange Money), les partenaires logistiques locaux, et les stratégies marketing adaptées à chaque pays d'Afrique de l'Ouest.</div>
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-item__q" aria-expanded="false">
           Que se passe-t-il si je ne suis pas satisfait(e) ?
-          <span class="faq-item__chevron">▼</span>
+          <span class="faq-chevron"><svg width="18" height="18"><use href="#ic-chevron"/></svg></span>
         </button>
         <div class="faq-item__a" role="region">
-          <div class="faq-item__a-inner">
-            Si tu n'es pas satisfait(e) dans les 7 jours suivant l'achat, envoie-nous un email à idykane03@gmail.com et nous te remboursons intégralement. Sans question.
-          </div>
+          <div class="faq-item__a-inner">Si tu n'es pas satisfait(e) dans les 7 jours suivant l'achat, envoie-nous un email à idykane03@gmail.com et nous te remboursons intégralement. Sans question.</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ===== CTA BANNER ===== -->
+<!-- ═══════════════════════════════
+     CTA BANNER
+═══════════════════════════════ -->
 <section class="cta-banner">
-  <div class="container cta-banner__content">
-    <h2 class="cta-banner__title">Prêt à lancer ton business ?</h2>
-    <p class="cta-banner__sub">Une méthode complète — produits, boutique, publicité — adaptée à ta réalité.</p>
-    <a href="#pricing" class="btn btn-primary btn-lg" onclick="fbq('track','ViewContent')">
-      Je veux me former maintenant →
+  <div class="container cta-banner__inner">
+    <h2 class="cta-banner__title reveal">Prêt à lancer ton business ?</h2>
+    <p class="cta-banner__sub reveal reveal-delay-1">Une méthode complète — produits, boutique, publicité — adaptée à ta réalité.</p>
+    <a href="#pricing" class="btn btn-primary btn-xl reveal reveal-delay-2" onclick="fbq('track','ViewContent')">
+      Je veux me former maintenant
+      <svg width="18" height="18"><use href="#ic-arrow"/></svg>
     </a>
+    <div class="cta-banner__guarantee reveal reveal-delay-3">
+      <svg width="13" height="13"><use href="#ic-shield"/></svg>
+      Garantie remboursement 7 jours — Sans question
+    </div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- ═══════════════════════════════
+     FOOTER
+═══════════════════════════════ -->
 <footer class="footer">
   <div class="container">
     <div class="footer__top">
       <div>
-        <div class="footer__logo" style="display:flex; align-items:center; gap:10px;">
-          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="footer__logo">
+          <svg width="30" height="30" viewBox="0 0 36 36" fill="none">
             <rect width="36" height="36" rx="10" fill="#C9A84C"/>
             <path d="M18 6L22.5 14H13.5L18 6Z" fill="#1a3d2b"/>
             <path d="M10 16h16v2H10z" fill="#1a3d2b" opacity=".4"/>
@@ -1387,9 +1801,7 @@
           </svg>
           <span><span>Afrika</span> Digital Academy</span>
         </div>
-        <p class="footer__desc">
-          Des formations e-commerce concrètes, adaptées aux réalités du marché africain, pour entrepreneurs ambitieux d'Afrique de l'Ouest.
-        </p>
+        <p class="footer__desc">Des formations e-commerce concrètes, adaptées aux réalités du marché africain, pour entrepreneurs ambitieux d'Afrique de l'Ouest.</p>
       </div>
       <div>
         <div class="footer__heading">Navigation</div>
@@ -1416,70 +1828,37 @@
   </div>
 </footer>
 
-<!-- ===== TOAST ===== -->
+<!-- TOAST -->
 <div id="toast"></div>
 
-<!-- ===== MODAL CHECKOUT ===== -->
-<div id="checkout-modal" style="
-  display:none; position:fixed; inset:0; z-index:1000;
-  background:rgba(16,36,24,.75); backdrop-filter:blur(6px);
-  align-items:center; justify-content:center; padding:20px;
-">
-  <div style="
-    background:#fff; border-radius:20px; width:100%; max-width:460px;
-    padding:36px 32px; box-shadow:0 24px 80px rgba(0,0,0,.3);
-    position:relative;
-  ">
-    <button onclick="closeModal()" style="
-      position:absolute; top:16px; right:16px; background:rgba(26,61,43,.08);
-      border:none; border-radius:50%; width:32px; height:32px; cursor:pointer;
-      font-size:18px; color:#1a3d2b; display:flex; align-items:center; justify-content:center;
-    ">×</button>
-
-    <div style="font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:700; color:#1a3d2b; margin-bottom:6px;">
-      Finalise ta commande
-    </div>
-    <div id="modal-product-name" style="font-size:13px; color:#C9A84C; font-weight:600; margin-bottom:24px; letter-spacing:.04em;"></div>
-
+<!-- ═══════════════════════════════
+     MODAL CHECKOUT
+═══════════════════════════════ -->
+<div id="checkout-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" aria-label="Fermer">×</button>
+    <div class="modal-title">Finalise ta commande</div>
+    <div id="modal-product-name" class="modal-sub"></div>
     <form id="checkout-form" onsubmit="submitCheckout(event)" novalidate>
       <input type="hidden" id="modal-product-id" value="" />
-
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
         <div>
-          <label style="display:block; font-size:12px; font-weight:600; color:#1a3d2b; margin-bottom:6px; letter-spacing:.04em; text-transform:uppercase;">Prénom *</label>
-          <input id="f-first" type="text" placeholder="Idrissa" required style="
-            width:100%; padding:12px 14px; border:1.5px solid rgba(26,61,43,.15);
-            border-radius:10px; font-size:14px; font-family:inherit; outline:none;
-            transition:border-color .2s;
-          " onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='rgba(26,61,43,.15)'" />
+          <label class="field-label" for="f-first">Prénom *</label>
+          <input id="f-first" class="field-input" type="text" placeholder="Idrissa" required autocomplete="given-name"/>
         </div>
         <div>
-          <label style="display:block; font-size:12px; font-weight:600; color:#1a3d2b; margin-bottom:6px; letter-spacing:.04em; text-transform:uppercase;">Nom *</label>
-          <input id="f-last" type="text" placeholder="Kane" required style="
-            width:100%; padding:12px 14px; border:1.5px solid rgba(26,61,43,.15);
-            border-radius:10px; font-size:14px; font-family:inherit; outline:none;
-            transition:border-color .2s;
-          " onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='rgba(26,61,43,.15)'" />
+          <label class="field-label" for="f-last">Nom *</label>
+          <input id="f-last" class="field-input" type="text" placeholder="Kane" required autocomplete="family-name"/>
         </div>
       </div>
-
       <div style="margin-bottom:12px;">
-        <label style="display:block; font-size:12px; font-weight:600; color:#1a3d2b; margin-bottom:6px; letter-spacing:.04em; text-transform:uppercase;">Email *</label>
-        <input id="f-email" type="email" placeholder="ton@email.com" required style="
-          width:100%; padding:12px 14px; border:1.5px solid rgba(26,61,43,.15);
-          border-radius:10px; font-size:14px; font-family:inherit; outline:none;
-          transition:border-color .2s;
-        " onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='rgba(26,61,43,.15)'" />
+        <label class="field-label" for="f-email">Email *</label>
+        <input id="f-email" class="field-input" type="email" placeholder="ton@email.com" required autocomplete="email"/>
       </div>
-
       <div style="margin-bottom:24px;">
-        <label style="display:block; font-size:12px; font-weight:600; color:#1a3d2b; margin-bottom:6px; letter-spacing:.04em; text-transform:uppercase;">Téléphone (sans indicatif) *</label>
+        <label class="field-label" for="f-phone">Téléphone (sans indicatif) *</label>
         <div style="display:flex; gap:8px;">
-          <select id="f-country" style="
-            padding:12px 10px; border:1.5px solid rgba(26,61,43,.15);
-            border-radius:10px; font-size:13px; font-family:inherit; outline:none;
-            background:#fff; color:#1a3d2b; min-width:110px; cursor:pointer;
-          ">
+          <select id="f-country" class="field-select" autocomplete="tel-country-code">
             <option value="SN">🇸🇳 +221</option>
             <option value="CI">🇨🇮 +225</option>
             <option value="ML">🇲🇱 +223</option>
@@ -1491,48 +1870,45 @@
             <option value="NE">🇳🇪 +227</option>
             <option value="MR">🇲🇷 +222</option>
           </select>
-          <input id="f-phone" type="tel" placeholder="77 123 45 67" required style="
-            flex:1; padding:12px 14px; border:1.5px solid rgba(26,61,43,.15);
-            border-radius:10px; font-size:14px; font-family:inherit; outline:none;
-            transition:border-color .2s;
-          " onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='rgba(26,61,43,.15)'" />
+          <input id="f-phone" class="field-input" type="tel" placeholder="77 123 45 67" required autocomplete="tel-national"/>
         </div>
       </div>
-
-      <button type="submit" id="modal-submit-btn" class="btn btn-primary btn-block" style="font-size:16px; padding:18px;">
+      <button type="submit" id="modal-submit-btn" class="btn btn-primary btn-block" style="font-size:16px; padding:17px;">
         <span class="spinner"></span>
-        <span class="btn-text">Procéder au paiement →</span>
+        <span class="btn-text">Procéder au paiement</span>
+        <svg width="16" height="16"><use href="#ic-arrow"/></svg>
       </button>
-
-      <!-- Payment icons in modal -->
       <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap;">
-        <span style="font-size:12px; color:#999;">Payer avec :</span>
+        <span style="font-size:12px; color:#aaa;">Payer avec :</span>
         <div style="display:flex; align-items:center; gap:6px; background:#eef2ff; border-radius:8px; padding:6px 12px;">
-          <svg width="30" height="18" viewBox="0 0 34 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="34" height="20" rx="4" fill="#1B4FCC"/>
-            <path d="M5 6 L8.5 14 L12 8 L15.5 14 L19 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <text x="23" y="14" font-family="Arial" font-weight="800" font-size="8" fill="white">W</text>
-          </svg>
+          <svg width="30" height="18" viewBox="0 0 34 20" fill="none"><rect width="34" height="20" rx="4" fill="#1B4FCC"/><path d="M5 6L8.5 14 12 8l3.5 6L19 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><text x="23" y="14" font-family="Arial" font-weight="800" font-size="8" fill="white">W</text></svg>
           <span style="font-size:12px; font-weight:700; color:#1B4FCC;">Wave</span>
         </div>
         <div style="display:flex; align-items:center; gap:6px; background:#fff3eb; border-radius:8px; padding:6px 12px;">
-          <svg width="30" height="18" viewBox="0 0 34 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="34" height="20" rx="4" fill="#FF6600"/>
-            <circle cx="10" cy="10" r="5.5" stroke="white" stroke-width="2" fill="none"/>
-            <circle cx="10" cy="10" r="1.8" fill="white"/>
-            <text x="19" y="14.5" font-family="Arial" font-weight="800" font-size="7.5" fill="white">OM</text>
-          </svg>
+          <svg width="30" height="18" viewBox="0 0 34 20" fill="none"><rect width="34" height="20" rx="4" fill="#FF6600"/><circle cx="10" cy="10" r="5.5" stroke="white" stroke-width="2" fill="none"/><circle cx="10" cy="10" r="1.8" fill="white"/><text x="19" y="14.5" font-family="Arial" font-weight="800" font-size="7.5" fill="white">OM</text></svg>
           <span style="font-size:12px; font-weight:700; color:#FF6600;">Orange Money</span>
         </div>
-        <span style="font-size:11px; color:#bbb;">🔒 Sécurisé</span>
+        <span style="font-size:11px; color:#ccc; display:flex; align-items:center; gap:4px;">
+          <svg width="12" height="12" style="color:#aaa"><use href="#ic-lock"/></svg> Sécurisé
+        </span>
       </div>
     </form>
   </div>
 </div>
 
-<!-- ===== JS ===== -->
 <script>
-  /* --- FAQ Accordion --- */
+  /* ── Scroll reveal ── */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* ── Nav shadow on scroll ── */
+  window.addEventListener('scroll', () => {
+    document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  /* ── FAQ accordion ── */
   document.querySelectorAll('.faq-item__q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
@@ -1548,7 +1924,7 @@
     });
   });
 
-  /* --- Toast helper --- */
+  /* ── Toast ── */
   function showToast(msg, isError = false) {
     const t = document.getElementById('toast');
     t.textContent = msg;
@@ -1558,7 +1934,7 @@
     setTimeout(() => t.classList.remove('show'), 4000);
   }
 
-  /* --- Modal --- */
+  /* ── Modal ── */
   function openModal(productId, label) {
     document.getElementById('modal-product-id').value = productId;
     document.getElementById('modal-product-name').textContent = label.toUpperCase();
@@ -1580,24 +1956,19 @@
   document.getElementById('checkout-modal').addEventListener('click', function(e) {
     if (e.target === this) closeModal();
   });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModal();
-  });
-
-  /* --- Checkout buttons → open modal --- */
+  /* ── Checkout buttons ── */
   document.querySelectorAll('.checkout-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const productId = btn.dataset.product;
       const label = btn.dataset.label;
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'InitiateCheckout', { content_name: label, content_ids: [productId] });
-      }
+      if (typeof fbq !== 'undefined') fbq('track', 'InitiateCheckout', { content_name: label, content_ids: [productId] });
       openModal(productId, label);
     });
   });
 
-  /* --- Form submit → call API --- */
+  /* ── Form submit ── */
   async function submitCheckout(e) {
     e.preventDefault();
     const btn = document.getElementById('modal-submit-btn');
@@ -1622,19 +1993,11 @@
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          product_id: productId,
-          first_name, last_name, email,
-          phone_number: phone,
-          phone_country: country
-        })
+        body: JSON.stringify({ product_id: productId, first_name, last_name, email, phone_number: phone, phone_country: country })
       });
-
       const data = await res.json();
-
       if (!res.ok) throw new Error(data.message || `Erreur serveur (${res.status})`);
       if (!data.checkout_url) throw new Error('URL de paiement introuvable.');
-
       window.location.href = data.checkout_url;
     } catch (err) {
       console.error('[Checkout]', err);
@@ -1644,6 +2007,5 @@
     }
   }
 </script>
-
 </body>
 </html>
