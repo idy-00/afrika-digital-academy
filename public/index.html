@@ -483,10 +483,11 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 14px;
-      max-width: 800px;
+      max-width: 1040px;
       margin: 0 auto;
     }
     @media (min-width: 580px) { .learn-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 860px) { .learn-grid { grid-template-columns: repeat(3, 1fr); } }
 
     .learn-item {
       display: flex;
@@ -587,7 +588,31 @@
     /* ════════════════════════════════
        PROGRAMME
     ════════════════════════════════ */
-    .modules { max-width: 740px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+    .modules {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .modules-row-top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+      padding: 0 0px;
+    }
+    @media (min-width: 700px) {
+      .modules-row-top {
+        grid-template-columns: 1fr 1fr;
+        padding: 0 20px;
+      }
+    }
+    .modules-row-bottom {
+      display: flex;
+      justify-content: center;
+      padding: 0 20px;
+    }
+    @media (min-width: 700px) {
+      .modules-row-bottom { padding: 0 180px; }
+    }
 
     .module-card {
       display: grid;
@@ -1517,41 +1542,47 @@
       <p class="sec-sub">3 modules complets pour passer de zéro à une boutique qui vend, de A à Z.</p>
     </div>
     <div class="modules">
-      <div class="module-card reveal">
-        <div class="module-card__num">1</div>
-        <div class="module-card__body">
-          <div class="module-card__title">Produits &amp; Fournisseurs</div>
-          <div class="module-card__desc">Trouve les bons produits et les bons partenaires avant d'investir un seul franc.</div>
-          <ul class="module-lessons">
-            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Trouver des produits gagnants sur le marché africain</li>
-            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Identifier des fournisseurs locaux fiables</li>
-            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Commander en Chine sans se faire arnaquer</li>
-          </ul>
+      <!-- Rangée du haut : modules 1 & 2 aux extrémités -->
+      <div class="modules-row-top">
+        <div class="module-card reveal">
+          <div class="module-card__num">1</div>
+          <div class="module-card__body">
+            <div class="module-card__title">Produits &amp; Fournisseurs</div>
+            <div class="module-card__desc">Trouve les bons produits et les bons partenaires avant d'investir un seul franc.</div>
+            <ul class="module-lessons">
+              <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Trouver des produits gagnants sur le marché africain</li>
+              <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Identifier des fournisseurs locaux fiables</li>
+              <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Commander en Chine sans se faire arnaquer</li>
+            </ul>
+          </div>
+        </div>
+        <div class="module-card reveal reveal-delay-1">
+          <div class="module-card__num">2</div>
+          <div class="module-card__body">
+            <div class="module-card__title">Créer sa boutique professionnelle de A à Z</div>
+            <div class="module-card__desc">Lance une boutique YouCan complète, prête à vendre, sans compétence technique.</div>
+            <ul class="module-lessons">
+              <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Inscription et configuration de YouCan</li>
+              <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Nom de domaine et logo</li>
+              <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Créer une page produit qui convertit</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="module-card reveal reveal-delay-1">
-        <div class="module-card__num">2</div>
-        <div class="module-card__body">
-          <div class="module-card__title">Créer sa boutique professionnelle de A à Z</div>
-          <div class="module-card__desc">Lance une boutique YouCan complète, prête à vendre, sans compétence technique.</div>
-          <ul class="module-lessons">
-            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Inscription et configuration de YouCan</li>
-            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Nom de domaine et logo</li>
-            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Créer une page produit qui convertit</li>
-          </ul>
-        </div>
-      </div>
-      <div class="module-card reveal reveal-delay-2">
-        <div class="module-card__num">3</div>
-        <div class="module-card__body">
-          <div class="module-card__title">Maîtriser la publicité Facebook Ads</div>
-          <div class="module-card__desc">Attire tes premiers clients avec des publicités efficaces, même avec un petit budget.</div>
-          <ul class="module-lessons">
-            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Créer des vidéos pub qui vendent</li>
-            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Configurer ton compte publicitaire et le Pixel Facebook</li>
-            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Lancer une campagne de testing</li>
-            <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Étude de cas réelle : une vraie campagne gagnante décortiquée</li>
-          </ul>
+      <!-- Rangée du bas : module 3 centré -->
+      <div class="modules-row-bottom">
+        <div class="module-card reveal reveal-delay-2" style="width:100%;">
+          <div class="module-card__num">3</div>
+          <div class="module-card__body">
+            <div class="module-card__title">Maîtriser la publicité Facebook Ads</div>
+            <div class="module-card__desc">Attire tes premiers clients avec des publicités efficaces, même avec un petit budget.</div>
+            <ul class="module-lessons">
+              <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Créer des vidéos pub qui vendent</li>
+              <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Configurer ton compte publicitaire et le Pixel Facebook</li>
+              <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Lancer une campagne de testing</li>
+              <li><svg width="14" height="14"><use href="#ic-check-sm"/></svg>Étude de cas réelle : une vraie campagne gagnante décortiquée</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
