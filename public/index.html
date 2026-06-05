@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Afrika Digital Academy — Maîtrise le E-commerce Africain</title>
+  <meta name="description" content="Formations e-commerce adaptées au marché africain. Apprends à vendre en ligne avec des méthodes qui fonctionnent vraiment en Afrique." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'PIXEL_ID_ICI');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=PIXEL_ID_ICI&ev=PageView&noscript=1" />
+  </noscript>
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #1a3d2b;
+      --green-light: #254d38;
+      --green-dark:  #102418;
+      --gold:        #C9A84C;
+      --gold-light:  #dfc06e;
+      --gold-dim:    #a88535;
+      --white:       #ffffff;
+      --off-white:   #f8f5ee;
+      --text:        #1c1c1c;
+      --text-muted:  #555;
+      --border:      rgba(201,168,76,.25);
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+
+      --radius: 12px;
+      --shadow: 0 4px 32px rgba(26,61,43,.12);
+      --shadow-lg: 0 12px 64px rgba(26,61,43,.20);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== UTILITY ===== */
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section { padding: 96px 0; }
+    .section--alt { background: var(--off-white); }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,168,76,.12);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 5px 14px;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.2; }
+
+    .section-title {
+      font-size: clamp(28px, 5vw, 44px);
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 56px;
+    }
+
+    .text-center { text-align: center; }
+
+    /* ===== BUTTON ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius);
+      padding: 16px 36px;
+      cursor: pointer;
+      transition: all .22s ease;
+      letter-spacing: .02em;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--green-dark);
+      box-shadow: 0 4px 18px rgba(201,168,76,.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(201,168,76,.50);
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 1.5px solid var(--gold);
+    }
+    .btn-outline:hover {
+      background: rgba(201,168,76,.08);
+      transform: translateY(-2px);
+    }
+
+    .btn-lg { font-size: 17px; padding: 20px 48px; border-radius: 14px; }
+
+    .btn-block { width: 100%; }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26,61,43,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,.15);
+    }
+
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav__logo {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav__logo-accent { color: var(--gold); }
+
+    .nav__cta { display: none; }
+    @media (min-width: 640px) { .nav__cta { display: inline-flex; padding: 10px 24px; font-size: 14px; } }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, var(--green-dark) 0%, var(--green) 55%, #1f5035 100%);
+      display: flex;
+      align-items: center;
+      padding-top: 68px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--white));
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      padding: 80px 0;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,76,.15);
+      border: 1px solid rgba(201,168,76,.30);
+      color: var(--gold-light);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      border-radius: 100px;
+      padding: 7px 16px;
+      margin-bottom: 28px;
+    }
+
+    .hero__badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .6; transform: scale(.85); }
+    }
+
+    .hero__title {
+      font-size: clamp(38px, 7vw, 72px);
+      color: var(--white);
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+
+    .hero__title em {
+      font-style: normal;
+      color: var(--gold);
+      position: relative;
+    }
+
+    .hero__sub {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: rgba(255,255,255,.75);
+      max-width: 560px;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+
+    .hero__cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    .hero__proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .hero__stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero__stat-num {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .hero__stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,.55);
+      margin-top: 4px;
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: var(--green);
+      padding: 20px 0;
+    }
+
+    .trust-bar__inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 32px 48px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,.80);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .trust-item__icon {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(201,168,76,.15);
+      border: 1px solid rgba(201,168,76,.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ===== LEARN SECTION ===== */
+    .learn__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 600px) {
+      .learn__grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .learn__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--white);
+      border: 1px solid rgba(26,61,43,.10);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: box-shadow .2s, border-color .2s;
+    }
+
+    .learn__item:hover {
+      box-shadow: var(--shadow);
+      border-color: var(--border);
+    }
+
+    .learn__icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: rgba(26,61,43,.07);
+      border: 1px solid rgba(26,61,43,.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .learn__item-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+
+    .learn__item-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+
+    /* ===== PROGRAMME ===== */
+    .programme__list {
+      max-width: 680px;
+      margin: 0 auto;
+      counter-reset: module;
+    }
+
+    .module {
+      counter-increment: module;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(26,61,43,.08);
+    }
+
+    .module:last-child { border-bottom: none; }
+
+    .module__num {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .module__title {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+
+    .module__desc { font-size: 14.5px; color: var(--text-muted); }
+
+    /* ===== PRICING ===== */
+    .pricing__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 860px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    @media (min-width: 700px) {
+      .pricing__grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border: 1.5px solid rgba(26,61,43,.12);
+      border-radius: 20px;
+      padding: 36px 32px;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+    .pricing-card--featured {
+      background: linear-gradient(160deg, var(--green) 0%, var(--green-dark) 100%);
+      border-color: var(--gold);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .pricing-card--featured .pricing-card__name,
+    .pricing-card--featured .pricing-card__feature { color: rgba(255,255,255,.85); }
+
+    .pricing-card--featured .pricing-card__name-label { color: var(--gold-light); }
+
+    .pricing-badge {
+      position: absolute;
+      top: -14px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--green-dark);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      padding: 5px 18px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .pricing-card__name-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .pricing-card__name {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 24px;
+    }
+
+    .pricing-card--featured .pricing-card__name { color: var(--white); }
+
+    .pricing-price {
+      margin-bottom: 28px;
+    }
+
+    .pricing-price__old {
+      font-size: 15px;
+      color: rgba(255,255,255,.45);
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+
+    .pricing-card:not(.pricing-card--featured) .pricing-price__old {
+      color: var(--text-muted);
+    }
+
+    .pricing-price__amount {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .pricing-card:not(.pricing-card--featured) .pricing-price__amount {
+      color: var(--green);
+    }
+
+    .pricing-price__unit {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .pricing-card--featured .pricing-price__unit { color: rgba(255,255,255,.55); }
+
+    .pricing-divider {
+      border: none;
+      border-top: 1px solid rgba(201,168,76,.20);
+      margin: 24px 0;
+    }
+
+    .pricing-card:not(.pricing-card--featured) .pricing-divider {
+      border-color: rgba(26,61,43,.10);
+    }
+
+    .pricing-card__features { list-style: none; margin-bottom: 32px; display: flex; flex-direction: column; gap: 12px; }
+
+    .pricing-card__feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14.5px;
+      color: var(--text);
+    }
+
+    .pricing-card__feature-icon {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: rgba(201,168,76,.20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pricing-card--featured .pricing-card__feature-icon {
+      background: rgba(201,168,76,.25);
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 700px) { .testimonials__grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid rgba(26,61,43,.10);
+      border-radius: 16px;
+      padding: 28px 24px;
+      position: relative;
+      transition: box-shadow .2s;
+    }
+
+    .testimonial-card:hover { box-shadow: var(--shadow); }
+
+    .testimonial-card__quote {
+      font-size: 36px;
+      font-family: var(--font-display);
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-card__text {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-card__author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-card__avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .testimonial-card__name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .testimonial-card__role { font-size: 12.5px; color: var(--text-muted); }
+
+    .stars { color: var(--gold); font-size: 13px; margin-bottom: 12px; }
+
+    /* ===== FAQ ===== */
+    .faq__list {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid rgba(26,61,43,.10);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color .2s;
+    }
+
+    .faq-item--open { border-color: var(--border); }
+
+    .faq-item__q {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      font-family: var(--font-body);
+      font-size: 15.5px;
+      font-weight: 600;
+      color: var(--green);
+      text-align: left;
+      cursor: pointer;
+      transition: color .2s;
+    }
+
+    .faq-item__q:hover { color: var(--gold-dim); }
+
+    .faq-item__chevron {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(26,61,43,.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+      transition: transform .3s, background .2s;
+    }
+
+    .faq-item--open .faq-item__chevron {
+      transform: rotate(180deg);
+      background: rgba(201,168,76,.15);
+    }
+
+    .faq-item__a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease;
+    }
+
+    .faq-item--open .faq-item__a { max-height: 300px; }
+
+    .faq-item__a-inner {
+      padding: 0 24px 20px;
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,.15) 0%, transparent 70%);
+    }
+
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 250px; height: 250px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,.10) 0%, transparent 70%);
+    }
+
+    .cta-banner__content { position: relative; z-index: 1; }
+
+    .cta-banner__title {
+      font-size: clamp(28px, 5vw, 48px);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .cta-banner__sub {
+      font-size: 18px;
+      color: rgba(255,255,255,.70);
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--green-dark);
+      padding: 56px 0 32px;
+      color: rgba(255,255,255,.65);
+    }
+
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      margin-bottom: 32px;
+    }
+
+    @media (min-width: 700px) {
+      .footer__top { grid-template-columns: 2fr 1fr 1fr; }
+    }
+
+    .footer__logo {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .footer__logo span { color: var(--gold); }
+
+    .footer__desc { font-size: 14px; line-height: 1.7; max-width: 300px; }
+
+    .footer__heading {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .footer__links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .footer__links a {
+      font-size: 14px;
+      color: rgba(255,255,255,.60);
+      transition: color .2s;
+    }
+
+    .footer__links a:hover { color: var(--gold-light); }
+
+    .footer__bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+    }
+
+    /* ===== TOAST ===== */
+    #toast {
+      position: fixed;
+      bottom: 32px; right: 24px;
+      z-index: 9999;
+      background: var(--green);
+      color: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 22px;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(120%);
+      transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+      max-width: 320px;
+    }
+
+    #toast.show { transform: translateY(0); }
+    #toast.error { background: #7a1a1a; border-color: #c0392b; }
+
+    /* ===== LOADING SPINNER ===== */
+    .spinner {
+      display: none;
+      width: 18px; height: 18px;
+      border: 2px solid rgba(26,61,43,.3);
+      border-top-color: var(--green-dark);
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .btn.loading .spinner { display: block; }
+    .btn.loading .btn-text { opacity: .7; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 480px) {
+      .section { padding: 72px 0; }
+      .hero__cta-group { flex-direction: column; align-items: stretch; }
+      .hero__proof { gap: 24px; }
+      .pricing-card { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="#" class="nav__logo" style="text-decoration:none;">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+        <rect width="36" height="36" rx="10" fill="#C9A84C"/>
+        <path d="M18 6L22.5 14H13.5L18 6Z" fill="#1a3d2b"/>
+        <path d="M10 16h16v2H10z" fill="#1a3d2b" opacity=".4"/>
+        <rect x="9" y="20" width="18" height="10" rx="3" fill="#1a3d2b"/>
+        <path d="M13 24h10M13 27h6" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span><span class="nav__logo-accent">Afrika</span> Digital Academy</span>
+    </a>
+    <a href="#pricing" class="btn btn-primary nav__cta">Voir les formations →</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container" style="display:flex; align-items:center; gap:48px;">
+    <div class="hero__content" style="flex:1; min-width:0;">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        Formations certifiées · Marché africain
+      </div>
+      <h1 class="hero__title">
+        Lance ton business<br/>
+        e-commerce et<br/>
+        <em>vends partout en Afrique</em>
+      </h1>
+      <p class="hero__sub">
+        Des formations concrètes, adaptées aux réalités du marché africain — paiement mobile money, logistique locale, marketing WhatsApp, et bien plus.
+      </p>
+      <div class="hero__cta-group">
+        <a href="#pricing" class="btn btn-primary btn-lg" onclick="fbq('track','ViewContent')">
+          Je veux me former →
+        </a>
+        <a href="#learn" class="btn btn-outline">
+          Découvrir le programme
+        </a>
+      </div>
+      <div class="hero__proof">
+        <div class="hero__stat">
+          <span class="hero__stat-num">2 000+</span>
+          <span class="hero__stat-label">Étudiants formés</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">7 pays</span>
+          <span class="hero__stat-label">Afrique de l'Ouest</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">94%</span>
+          <span class="hero__stat-label">Taux de satisfaction</span>
+        </div>
+      </div>
+    </div>
+    <!-- Hero photo -->
+    <div class="hero__illustration" style="flex:0 0 420px; display:none; position:relative;">
+      <div style="border-radius:24px; overflow:hidden; box-shadow:0 24px 64px rgba(0,0,0,.45); position:relative;">
+        <img
+          src="https://images.pexels.com/photos/3874040/pexels-photo-3874040.jpeg?auto=compress&cs=tinysrgb&w=840&h=700&fit=crop"
+          alt="Entrepreneur africain au téléphone et laptop"
+          style="width:100%; display:block; height:520px; object-fit:cover;"
+          loading="eager"
+        />
+        <!-- overlay gradient -->
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(16,36,24,.6) 0%,transparent 50%);"></div>
+      </div>
+      <!-- Floating badge 1 -->
+      <div style="position:absolute; top:28px; left:-24px; background:#C9A84C; color:#1a3d2b; border-radius:14px; padding:10px 16px; font-size:13px; font-weight:700; box-shadow:0 8px 24px rgba(201,168,76,.45); white-space:nowrap;">
+        🚀 Lancé en 6 semaines
+      </div>
+      <!-- Floating badge 2 -->
+      <div style="position:absolute; bottom:40px; right:-20px; background:#1a3d2b; border:1.5px solid #C9A84C; color:white; border-radius:14px; padding:10px 16px; font-size:12px; font-weight:600; box-shadow:0 8px 24px rgba(0,0,0,.4);">
+        ✓ 2 000+ étudiants formés
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (min-width: 900px) { .hero__illustration { display:block !important; } }
+</style>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar">
+  <div class="container trust-bar__inner">
+    <div class="trust-item">
+      <div class="trust-item__icon">✓</div>
+      Accès immédiat après paiement
+    </div>
+    <div class="trust-item" style="gap:6px;">
+      <svg width="30" height="18" viewBox="0 0 34 20" fill="none"><rect width="34" height="20" rx="4" fill="#1B4FCC"/><path d="M5 6 L8.5 14 L12 8 L15.5 14 L19 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><text x="23" y="14" font-family="Arial" font-weight="800" font-size="8" fill="white">W</text></svg>
+      <svg width="30" height="18" viewBox="0 0 34 20" fill="none"><rect width="34" height="20" rx="4" fill="#FF6600"/><circle cx="10" cy="10" r="5.5" stroke="white" stroke-width="2" fill="none"/><circle cx="10" cy="10" r="1.8" fill="white"/><text x="19" y="14.5" font-family="Arial" font-weight="800" font-size="7.5" fill="white">OM</text></svg>
+      <span>Wave &amp; Orange Money</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-item__icon">🔒</div>
+      Paiement 100% sécurisé
+    </div>
+    <div class="trust-item">
+      <div class="trust-item__icon">♾️</div>
+      Accès à vie au contenu
+    </div>
+  </div>
+</div>
+
+<!-- ===== CE QUE TU VAS APPRENDRE ===== -->
+<section id="learn" class="section section--alt">
+  <div class="container text-center">
+    <span class="tag">Programme</span>
+    <h2 class="section-title">Ce que tu vas maîtriser</h2>
+    <p class="section-sub">Un programme complet, du débutant au vendeur professionnel, pensé pour le contexte africain.</p>
+    <div class="learn__grid">
+      <div class="learn__item">
+        <div class="learn__icon">🛒</div>
+        <div>
+          <div class="learn__item-title">Créer ta boutique en ligne</div>
+          <div class="learn__item-desc">Shopify, WooCommerce ou solution locale — choisir et configurer la bonne plateforme.</div>
+        </div>
+      </div>
+      <div class="learn__item">
+        <div class="learn__icon">📦</div>
+        <div>
+          <div class="learn__item-title">Sourcing & fournisseurs</div>
+          <div class="learn__item-desc">Trouver des produits rentables, négocier avec des fournisseurs locaux et internationaux.</div>
+        </div>
+      </div>
+      <div class="learn__item">
+        <div class="learn__icon">📲</div>
+        <div>
+          <div class="learn__item-title">Marketing WhatsApp & réseaux</div>
+          <div class="learn__item-desc">Acquérir des clients avec Facebook Ads, TikTok et les groupes WhatsApp Business.</div>
+        </div>
+      </div>
+      <div class="learn__item">
+        <div class="learn__icon">💳</div>
+        <div>
+          <div class="learn__item-title">Paiements mobiles intégrés</div>
+          <div class="learn__item-desc">Wave, Orange Money, MTN MoMo — accepter les paiements sans friction.</div>
+        </div>
+      </div>
+      <div class="learn__item">
+        <div class="learn__icon">🚚</div>
+        <div>
+          <div class="learn__item-title">Logistique & livraison locale</div>
+          <div class="learn__item-desc">Partenaires de livraison fiables, gestion des retours, traçabilité colis.</div>
+        </div>
+      </div>
+      <div class="learn__item">
+        <div class="learn__icon">📊</div>
+        <div>
+          <div class="learn__item-title">Analyse & croissance</div>
+          <div class="learn__item-desc">Lire ses chiffres, optimiser son tunnel de vente et scaler ses revenus.</div>
+        </div>
+      </div>
+      <div class="learn__item">
+        <div class="learn__icon">🤝</div>
+        <div>
+          <div class="learn__item-title">Service client africain</div>
+          <div class="learn__item-desc">Fidéliser, gérer les litiges et construire une réputation solide sur le continent.</div>
+        </div>
+      </div>
+      <div class="learn__item">
+        <div class="learn__icon">⚡</div>
+        <div>
+          <div class="learn__item-title">Automatisation & outils IA</div>
+          <div class="learn__item-desc">Gagner du temps avec les bons outils pour scaler sans embaucher.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT VISUAL ===== -->
+<section class="section" style="padding:72px 0;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr; gap:48px; align-items:center;" class="about-grid">
+      <!-- Photo grid -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:240px 200px; gap:12px; border-radius:24px; overflow:hidden;">
+        <div style="grid-row:1/3; border-radius:16px; overflow:hidden;">
+          <img src="https://images.pexels.com/photos/6585022/pexels-photo-6585022.jpeg?auto=compress&cs=tinysrgb&w=600&h=460&fit=crop"
+            alt="Entrepreneur avec laptop" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy"/>
+        </div>
+        <div style="border-radius:16px; overflow:hidden;">
+          <img src="https://images.pexels.com/photos/9301461/pexels-photo-9301461.jpeg?auto=compress&cs=tinysrgb&w=500&h=250&fit=crop"
+            alt="Équipe startup africaine" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy"/>
+        </div>
+        <div style="border-radius:16px; overflow:hidden; position:relative;">
+          <img src="https://images.pexels.com/photos/7550279/pexels-photo-7550279.jpeg?auto=compress&cs=tinysrgb&w=500&h=210&fit=crop"
+            alt="Entrepreneur tablette" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(16,36,24,.55) 0%,transparent 60%);display:flex;align-items:flex-end;padding:14px;">
+            <span style="color:#C9A84C;font-weight:700;font-size:14px;">7 pays · Afrique de l'Ouest</span>
+          </div>
+        </div>
+      </div>
+      <!-- Text -->
+      <div>
+        <span class="tag">Notre mission</span>
+        <h2 class="section-title" style="text-align:left; margin-bottom:20px;">Formé pour le marché africain,<br/>pas pour l'Occident</h2>
+        <p style="color:var(--text-muted); font-size:16px; line-height:1.8; margin-bottom:24px;">
+          Toutes les formations e-commerce disponibles en ligne parlent de Stripe, PayPal, Amazon. Ici, on parle de <strong>Wave, Orange Money</strong>, de fournisseurs locaux, de livraison dans les quartiers de Dakar, Abidjan ou Conakry.
+        </p>
+        <p style="color:var(--text-muted); font-size:16px; line-height:1.8; margin-bottom:32px;">
+          Notre approche : des méthodes testées, des résultats mesurables, une communauté d'entrepreneurs qui se serrent les coudes à travers 7 pays.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px;">
+          <div style="display:flex; align-items:center; gap:10px; background:rgba(26,61,43,.06); border-radius:10px; padding:12px 18px;">
+            <span style="font-size:22px;">🌍</span>
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--green);">Adapté à l'Afrique</div>
+              <div style="font-size:12px; color:var(--text-muted);">Méthodes locales</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; background:rgba(26,61,43,.06); border-radius:10px; padding:12px 18px;">
+            <span style="font-size:22px;">📱</span>
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--green);">Mobile-first</div>
+              <div style="font-size:12px; color:var(--text-muted);">Wave & Orange Money</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; background:rgba(26,61,43,.06); border-radius:10px; padding:12px 18px;">
+            <span style="font-size:22px;">🤝</span>
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--green);">Communauté active</div>
+              <div style="font-size:12px; color:var(--text-muted);">Groupe WhatsApp privé</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  @media (min-width: 800px) {
+    .about-grid { grid-template-columns: 1fr 1fr !important; }
+  }
+</style>
+
+<!-- ===== PROGRAMME ===== -->
+<section class="section">
+  <div class="container text-center">
+    <span class="tag">Modules</span>
+    <h2 class="section-title">Le programme détaillé</h2>
+    <p class="section-sub">8 modules progressifs pour passer de zéro à un business rentable.</p>
+    <div class="programme__list">
+      <div class="module">
+        <div class="module__num">1</div>
+        <div>
+          <div class="module__title">Fondations du e-commerce africain</div>
+          <div class="module__desc">Comprendre le marché, les opportunités réelles, et les erreurs à éviter dès le départ.</div>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module__num">2</div>
+        <div>
+          <div class="module__title">Trouver et valider ton produit gagnant</div>
+          <div class="module__desc">Méthode de recherche produit, étude de la demande locale, test avant investissement.</div>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module__num">3</div>
+        <div>
+          <div class="module__title">Construire ta boutique professionnelle</div>
+          <div class="module__desc">Mise en place technique, fiches produits persuasives, images et descriptions qui vendent.</div>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module__num">4</div>
+        <div>
+          <div class="module__title">Intégrer les paiements & la logistique</div>
+          <div class="module__desc">Wave, Orange Money, partenaires de livraison, gestion des stocks et des commandes.</div>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module__num">5</div>
+        <div>
+          <div class="module__title">Attirer tes premiers clients</div>
+          <div class="module__desc">Facebook Ads budget serré, groupes WhatsApp, influenceurs micro-locaux.</div>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module__num">6</div>
+        <div>
+          <div class="module__title">Convertir & fidéliser</div>
+          <div class="module__desc">Relances automatiques, programme de fidélité, service client 5 étoiles.</div>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module__num">7</div>
+        <div>
+          <div class="module__title">Analyser et optimiser</div>
+          <div class="module__desc">Tableaux de bord, KPIs essentiels, décisions basées sur les données réelles.</div>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module__num">8</div>
+        <div>
+          <div class="module__title">Scaler ton business</div>
+          <div class="module__desc">Déléguer, automatiser, ouvrir vers d'autres pays — passer à un business de 6 chiffres.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing" class="section section--alt">
+  <div class="container text-center">
+    <span class="tag">Tarif</span>
+    <h2 class="section-title">Une seule offre, complète</h2>
+    <p class="section-sub">Tout ce qu'il faut pour lancer et scaler ton business e-commerce en Afrique.</p>
+
+    <div style="max-width:520px; margin:0 auto;">
+      <div class="pricing-card pricing-card--featured" style="border-radius:24px; padding:48px 40px;">
+        <div class="pricing-badge">🔥 Offre de lancement · Places limitées</div>
+        <div class="pricing-card__name-label" style="margin-top:8px;">Formation e-commerce Afrique 2026</div>
+        <div class="pricing-card__name" style="color:#fff; font-size:34px;">Formation Complète</div>
+        <div class="pricing-price" style="margin:20px 0 28px;">
+          <div class="pricing-price__old">9 900 F CFA</div>
+          <div style="display:flex; align-items:baseline; justify-content:center; gap:8px;">
+            <span class="pricing-price__amount" style="font-size:64px;">4 999</span>
+            <span style="color:rgba(255,255,255,.6); font-size:20px;">F CFA</span>
+          </div>
+          <div style="display:inline-block; background:rgba(201,168,76,.25); border:1px solid rgba(201,168,76,.4); color:#dfc06e; font-size:12px; font-weight:700; letter-spacing:.08em; border-radius:100px; padding:4px 14px; margin-top:8px;">
+            TU ÉCONOMISES 4 901 F CFA
+          </div>
+        </div>
+        <hr class="pricing-divider" />
+        <ul class="pricing-card__features" style="text-align:left; max-width:340px; margin:0 auto 32px;">
+          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Tous les 8 modules complets</li>
+          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Vidéos HD + ressources PDF téléchargeables</li>
+          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Accès au groupe WhatsApp privé</li>
+          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>1 session de coaching individuel incluse</li>
+          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Mises à jour gratuites à vie</li>
+          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Certificat de formation</li>
+          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Accès immédiat après paiement</li>
+        </ul>
+        <button class="btn btn-primary btn-block checkout-btn" data-product="prd_r9u520m5" data-label="Formation Complète" style="font-size:18px; padding:22px;">
+          <span class="spinner"></span>
+          <span class="btn-text">Je m'inscris maintenant →</span>
+        </button>
+        <!-- Payment methods -->
+        <div style="margin-top:24px; display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap;">
+          <span style="font-size:12px; color:rgba(255,255,255,.45);">Payer avec :</span>
+          <div style="display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.08); border-radius:100px; padding:7px 16px;">
+            <!-- Logo Wave officiel : fond bleu #1B4FCC, lettre W blanche stylisée -->
+            <svg width="34" height="20" viewBox="0 0 34 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="34" height="20" rx="4" fill="#1B4FCC"/>
+              <path d="M5 6 L8.5 14 L12 8 L15.5 14 L19 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <text x="23" y="14" font-family="Arial" font-weight="800" font-size="8" fill="white">W</text>
+            </svg>
+            <span style="font-size:13px; font-weight:600; color:white;">Wave</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.08); border-radius:100px; padding:7px 16px;">
+            <!-- Logo Orange Money : cercle orange, lettre O + point -->
+            <svg width="34" height="20" viewBox="0 0 34 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="34" height="20" rx="4" fill="#FF6600"/>
+              <circle cx="10" cy="10" r="5.5" stroke="white" stroke-width="2" fill="none"/>
+              <circle cx="10" cy="10" r="1.8" fill="white"/>
+              <text x="19" y="14.5" font-family="Arial" font-weight="800" font-size="7.5" fill="white">OM</text>
+            </svg>
+            <span style="font-size:13px; font-weight:600; color:white;">Orange Money</span>
+          </div>
+        </div>
+        <p style="font-size:12px; color:rgba(255,255,255,.35); margin-top:12px;">🔒 Paiement 100% sécurisé</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TÉMOIGNAGES ===== -->
+<section id="testimonials" class="section">
+  <div class="container text-center">
+    <span class="tag">Témoignages</span>
+    <h2 class="section-title">Ils ont transformé leur vie</h2>
+    <p class="section-sub">Des apprenants de toute l'Afrique de l'Ouest qui ont pris le saut — et ne le regrettent pas.</p>
+    <div class="testimonials__grid">
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-card__quote">"</div>
+        <p class="testimonial-card__text">
+          En 6 semaines j'ai lancé ma boutique de vêtements en ligne. Aujourd'hui je fais plus de 300 000 F CFA de chiffre d'affaires par mois. La formation m'a ouvert des portes que je n'imaginais même pas.
+        </p>
+        <div class="testimonial-card__author">
+          <img src="https://images.pexels.com/photos/10375889/pexels-photo-10375889.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop&facepad=2"
+            alt="Fatou Diallo" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;"/>
+          <div>
+            <div class="testimonial-card__name">Fatou Diallo</div>
+            <div class="testimonial-card__role">Vendeuse en ligne · Dakar, Sénégal</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-card__quote">"</div>
+        <p class="testimonial-card__text">
+          J'avais essayé plusieurs formations en ligne, mais aucune ne parlait de notre réalité — les paiements Wave, la livraison locale. Ici, tout est adapté à ce qu'on vit vraiment en Afrique.
+        </p>
+        <div class="testimonial-card__author">
+          <img src="https://images.pexels.com/photos/6285069/pexels-photo-6285069.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop&facepad=2"
+            alt="Kofi Mensah" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;"/>
+          <div>
+            <div class="testimonial-card__name">Kofi Mensah</div>
+            <div class="testimonial-card__role">Entrepreneur digital · Abidjan, Côte d'Ivoire</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <div class="testimonial-card__quote">"</div>
+        <p class="testimonial-card__text">
+          Le module sur les Facebook Ads à petit budget m'a changé la vie. J'ai lancé une campagne avec 5 000 F CFA et généré 12 commandes en 3 jours. Je recommande à 100%.
+        </p>
+        <div class="testimonial-card__author">
+          <img src="https://images.pexels.com/photos/8475183/pexels-photo-8475183.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop&facepad=2"
+            alt="Mamadou Baldé" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;"/>
+          <div>
+            <div class="testimonial-card__name">Mamadou Baldé</div>
+            <div class="testimonial-card__role">Revendeur · Conakry, Guinée</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="section section--alt">
+  <div class="container text-center">
+    <span class="tag">FAQ</span>
+    <h2 class="section-title">Questions fréquentes</h2>
+    <p class="section-sub">Tout ce que tu dois savoir avant de te lancer.</p>
+    <div class="faq__list">
+
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">
+          Est-ce que je dois avoir des connaissances techniques ?
+          <span class="faq-item__chevron">▼</span>
+        </button>
+        <div class="faq-item__a" role="region">
+          <div class="faq-item__a-inner">
+            Non, absolument pas. La formation est conçue pour les débutants complets. Tout est expliqué étape par étape, avec des captures d'écran et des vidéos en français. Si tu sais utiliser un smartphone, tu peux suivre la formation.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">
+          Comment se passe le paiement ?
+          <span class="faq-item__chevron">▼</span>
+        </button>
+        <div class="faq-item__a" role="region">
+          <div class="faq-item__a-inner">
+            Le paiement se fait via Wave ou Orange Money — 100% mobile, 100% sécurisé. Dès que ton paiement est confirmé, tu reçois immédiatement tes accès par email. Pas de carte bancaire requise.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">
+          Combien de temps ai-je accès à la formation ?
+          <span class="faq-item__chevron">▼</span>
+        </button>
+        <div class="faq-item__a" role="region">
+          <div class="faq-item__a-inner">
+            Tu as un accès à vie à tout le contenu, y compris les futures mises à jour. Tu peux avancer à ton propre rythme, revoir les modules autant de fois que tu le souhaites, depuis n'importe quel appareil.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">
+          La formation est-elle adaptée à mon pays ?
+          <span class="faq-item__chevron">▼</span>
+        </button>
+        <div class="faq-item__a" role="region">
+          <div class="faq-item__a-inner">
+            Oui ! La formation est spécialement conçue pour le marché africain. On couvre les solutions de paiement (Wave, Orange Money, MTN MoMo), les partenaires logistiques locaux, et les stratégies marketing adaptées à chaque pays d'Afrique de l'Ouest.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q" aria-expanded="false">
+          Que se passe-t-il si je ne suis pas satisfait(e) ?
+          <span class="faq-item__chevron">▼</span>
+        </button>
+        <div class="faq-item__a" role="region">
+          <div class="faq-item__a-inner">
+            Nous avons confiance en la qualité de notre formation. Si pour une raison quelconque tu n'es pas satisfait(e) dans les 7 jours suivant l'achat, contacte-nous à idykane03@gmail.com et nous examinerons ta demande. Notre priorité, c'est ta réussite.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner">
+  <div class="container cta-banner__content">
+    <h2 class="cta-banner__title">Prêt à lancer ton business ?</h2>
+    <p class="cta-banner__sub">Rejoins plus de 2 000 entrepreneurs africains qui vendent en ligne.</p>
+    <a href="#pricing" class="btn btn-primary btn-lg" onclick="fbq('track','ViewContent')">
+      Je veux me former maintenant →
+    </a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo" style="display:flex; align-items:center; gap:10px;">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="10" fill="#C9A84C"/>
+            <path d="M18 6L22.5 14H13.5L18 6Z" fill="#1a3d2b"/>
+            <path d="M10 16h16v2H10z" fill="#1a3d2b" opacity=".4"/>
+            <rect x="9" y="20" width="18" height="10" rx="3" fill="#1a3d2b"/>
+            <path d="M13 24h10M13 27h6" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span><span>Afrika</span> Digital Academy</span>
+        </div>
+        <p class="footer__desc">
+          Des formations e-commerce concrètes, adaptées aux réalités du marché africain, pour entrepreneurs ambitieux d'Afrique de l'Ouest.
+        </p>
+      </div>
+      <div>
+        <div class="footer__heading">Navigation</div>
+        <ul class="footer__links">
+          <li><a href="#learn">Programme</a></li>
+          <li><a href="#pricing">Tarifs</a></li>
+          <li><a href="#testimonials">Témoignages</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <ul class="footer__links">
+          <li><a href="mailto:idykane03@gmail.com">idykane03@gmail.com</a></li>
+          <li><a href="tel:+221781194805">+221 781 194 805</a></li>
+          <li><a href="https://uiytijwe.mychariow.shop" target="_blank" rel="noopener">Notre boutique</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Afrika Digital Academy · Idrissa KANE · Dakar, Sénégal</span>
+      <span>Mentions légales · Politique de confidentialité · CGV</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== TOAST ===== -->
+<div id="toast"></div>
+
+<!-- ===== MODAL CHECKOUT ===== -->
+<div id="checkout-modal" style="
+  display:none; position:fixed; inset:0; z-index:1000;
+  background:rgba(16,36,24,.75); backdrop-filter:blur(6px);
+  align-items:center; justify-content:center; padding:20px;
+">
+  <div style="
+    background:#fff; border-radius:20px; width:100%; max-width:460px;
+    padding:36px 32px; box-shadow:0 24px 80px rgba(0,0,0,.3);
+    position:relative;
+  ">
+    <button onclick="closeModal()" style="
+      position:absolute; top:16px; right:16px; background:rgba(26,61,43,.08);
+      border:none; border-radius:50%; width:32px; height:32px; cursor:pointer;
+      font-size:18px; color:#1a3d2b; display:flex; align-items:center; justify-content:center;
+    ">×</button>
+
+    <div style="font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:700; color:#1a3d2b; margin-bottom:6px;">
+      Finalise ta commande
+    </div>
+    <div id="modal-product-name" style="font-size:13px; color:#C9A84C; font-weight:600; margin-bottom:24px; letter-spacing:.04em;"></div>
+
+    <form id="checkout-form" onsubmit="submitCheckout(event)" novalidate>
+      <input type="hidden" id="modal-product-id" value="" />
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div>
+          <label style="display:block; font-size:12px; font-weight:600; color:#1a3d2b; margin-bottom:6px; letter-spacing:.04em; text-transform:uppercase;">Prénom *</label>
+          <input id="f-first" type="text" placeholder="Idrissa" required style="
+            width:100%; padding:12px 14px; border:1.5px solid rgba(26,61,43,.15);
+            border-radius:10px; font-size:14px; font-family:inherit; outline:none;
+            transition:border-color .2s;
+          " onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='rgba(26,61,43,.15)'" />
+        </div>
+        <div>
+          <label style="display:block; font-size:12px; font-weight:600; color:#1a3d2b; margin-bottom:6px; letter-spacing:.04em; text-transform:uppercase;">Nom *</label>
+          <input id="f-last" type="text" placeholder="Kane" required style="
+            width:100%; padding:12px 14px; border:1.5px solid rgba(26,61,43,.15);
+            border-radius:10px; font-size:14px; font-family:inherit; outline:none;
+            transition:border-color .2s;
+          " onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='rgba(26,61,43,.15)'" />
+        </div>
+      </div>
+
+      <div style="margin-bottom:12px;">
+        <label style="display:block; font-size:12px; font-weight:600; color:#1a3d2b; margin-bottom:6px; letter-spacing:.04em; text-transform:uppercase;">Email *</label>
+        <input id="f-email" type="email" placeholder="ton@email.com" required style="
+          width:100%; padding:12px 14px; border:1.5px solid rgba(26,61,43,.15);
+          border-radius:10px; font-size:14px; font-family:inherit; outline:none;
+          transition:border-color .2s;
+        " onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='rgba(26,61,43,.15)'" />
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <label style="display:block; font-size:12px; font-weight:600; color:#1a3d2b; margin-bottom:6px; letter-spacing:.04em; text-transform:uppercase;">Téléphone (sans indicatif) *</label>
+        <div style="display:flex; gap:8px;">
+          <select id="f-country" style="
+            padding:12px 10px; border:1.5px solid rgba(26,61,43,.15);
+            border-radius:10px; font-size:13px; font-family:inherit; outline:none;
+            background:#fff; color:#1a3d2b; min-width:110px; cursor:pointer;
+          ">
+            <option value="SN">🇸🇳 +221</option>
+            <option value="CI">🇨🇮 +225</option>
+            <option value="ML">🇲🇱 +223</option>
+            <option value="BF">🇧🇫 +226</option>
+            <option value="GN">🇬🇳 +224</option>
+            <option value="CM">🇨🇲 +237</option>
+            <option value="TG">🇹🇬 +228</option>
+            <option value="BJ">🇧🇯 +229</option>
+            <option value="NE">🇳🇪 +227</option>
+            <option value="MR">🇲🇷 +222</option>
+          </select>
+          <input id="f-phone" type="tel" placeholder="77 123 45 67" required style="
+            flex:1; padding:12px 14px; border:1.5px solid rgba(26,61,43,.15);
+            border-radius:10px; font-size:14px; font-family:inherit; outline:none;
+            transition:border-color .2s;
+          " onfocus="this.style.borderColor='#C9A84C'" onblur="this.style.borderColor='rgba(26,61,43,.15)'" />
+        </div>
+      </div>
+
+      <button type="submit" id="modal-submit-btn" class="btn btn-primary btn-block" style="font-size:16px; padding:18px;">
+        <span class="spinner"></span>
+        <span class="btn-text">Procéder au paiement →</span>
+      </button>
+
+      <!-- Payment icons in modal -->
+      <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap;">
+        <span style="font-size:12px; color:#999;">Payer avec :</span>
+        <div style="display:flex; align-items:center; gap:6px; background:#eef2ff; border-radius:8px; padding:6px 12px;">
+          <svg width="30" height="18" viewBox="0 0 34 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="34" height="20" rx="4" fill="#1B4FCC"/>
+            <path d="M5 6 L8.5 14 L12 8 L15.5 14 L19 6" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <text x="23" y="14" font-family="Arial" font-weight="800" font-size="8" fill="white">W</text>
+          </svg>
+          <span style="font-size:12px; font-weight:700; color:#1B4FCC;">Wave</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:6px; background:#fff3eb; border-radius:8px; padding:6px 12px;">
+          <svg width="30" height="18" viewBox="0 0 34 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="34" height="20" rx="4" fill="#FF6600"/>
+            <circle cx="10" cy="10" r="5.5" stroke="white" stroke-width="2" fill="none"/>
+            <circle cx="10" cy="10" r="1.8" fill="white"/>
+            <text x="19" y="14.5" font-family="Arial" font-weight="800" font-size="7.5" fill="white">OM</text>
+          </svg>
+          <span style="font-size:12px; font-weight:700; color:#FF6600;">Orange Money</span>
+        </div>
+        <span style="font-size:11px; color:#bbb;">🔒 Sécurisé</span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ===== JS ===== -->
+<script>
+  /* --- FAQ Accordion --- */
+  document.querySelectorAll('.faq-item__q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('faq-item--open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('faq-item--open');
+        i.querySelector('.faq-item__q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('faq-item--open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* --- Toast helper --- */
+  function showToast(msg, isError = false) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = isError ? 'error' : '';
+    void t.offsetWidth;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 4000);
+  }
+
+  /* --- Modal --- */
+  function openModal(productId, label) {
+    document.getElementById('modal-product-id').value = productId;
+    document.getElementById('modal-product-name').textContent = label.toUpperCase();
+    const modal = document.getElementById('checkout-modal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => document.getElementById('f-first').focus(), 100);
+  }
+
+  function closeModal() {
+    document.getElementById('checkout-modal').style.display = 'none';
+    document.body.style.overflow = '';
+    const btn = document.getElementById('modal-submit-btn');
+    btn.classList.remove('loading');
+    btn.disabled = false;
+    document.getElementById('checkout-form').reset();
+  }
+
+  document.getElementById('checkout-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  /* --- Checkout buttons → open modal --- */
+  document.querySelectorAll('.checkout-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const productId = btn.dataset.product;
+      const label = btn.dataset.label;
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'InitiateCheckout', { content_name: label, content_ids: [productId] });
+      }
+      openModal(productId, label);
+    });
+  });
+
+  /* --- Form submit → call API --- */
+  async function submitCheckout(e) {
+    e.preventDefault();
+    const btn = document.getElementById('modal-submit-btn');
+    if (btn.classList.contains('loading')) return;
+
+    const productId  = document.getElementById('modal-product-id').value;
+    const first_name = document.getElementById('f-first').value.trim();
+    const last_name  = document.getElementById('f-last').value.trim();
+    const email      = document.getElementById('f-email').value.trim();
+    const phone      = document.getElementById('f-phone').value.replace(/\s/g, '');
+    const country    = document.getElementById('f-country').value;
+
+    if (!first_name || !last_name || !email || !phone) {
+      showToast('Merci de remplir tous les champs.', true);
+      return;
+    }
+
+    btn.classList.add('loading');
+    btn.disabled = true;
+
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          product_id: productId,
+          first_name, last_name, email,
+          phone_number: phone,
+          phone_country: country
+        })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.message || `Erreur serveur (${res.status})`);
+      if (!data.checkout_url) throw new Error('URL de paiement introuvable.');
+
+      window.location.href = data.checkout_url;
+    } catch (err) {
+      console.error('[Checkout]', err);
+      showToast(err.message || 'Une erreur est survenue. Réessaie.', true);
+      btn.classList.remove('loading');
+      btn.disabled = false;
+    }
+  }
+</script>
+
+</body>
+</html>
