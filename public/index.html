@@ -424,7 +424,28 @@
       margin-bottom: 6px;
     }
 
-    .module__desc { font-size: 14.5px; color: var(--text-muted); }
+    .module__desc { font-size: 14.5px; color: var(--text-muted); margin-bottom: 10px; }
+
+    .module__lessons {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 10px;
+    }
+    .module__lessons li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .module__lessons li::before {
+      content: '→';
+      color: var(--gold-dim);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
 
     /* ===== PRICING ===== */
     .pricing__grid {
@@ -885,7 +906,7 @@
         <em>vends partout en Afrique</em>
       </h1>
       <p class="hero__sub">
-        Des formations concrètes, adaptées aux réalités du marché africain — paiement mobile money, logistique locale, marketing WhatsApp, et bien plus.
+        Tu veux lancer ton e-commerce mais tu te perds entre mille tutos qui ne parlent pas de ta réalité ? Cette formation te donne une méthode complète — produits, fournisseurs, boutique, publicité — dans l'ordre, de A à Z, adaptée au marché africain.
       </p>
       <div class="hero__cta-group">
         <a href="#pricing" class="btn btn-primary btn-lg" onclick="fbq('track','ViewContent')">
@@ -895,18 +916,21 @@
           Découvrir le programme
         </a>
       </div>
+      <p style="font-size:13px; color:rgba(255,255,255,.55); margin-top:-8px; margin-bottom:32px;">
+        🔒 Garantie remboursement 7 jours — Accès immédiat après paiement
+      </p>
       <div class="hero__proof">
         <div class="hero__stat">
-          <span class="hero__stat-num">2 000+</span>
-          <span class="hero__stat-label">Étudiants formés</span>
+          <span class="hero__stat-num">A→Z</span>
+          <span class="hero__stat-label">Formation complète</span>
         </div>
         <div class="hero__stat">
-          <span class="hero__stat-num">7 pays</span>
-          <span class="hero__stat-label">Afrique de l'Ouest</span>
+          <span class="hero__stat-num">✓</span>
+          <span class="hero__stat-label">Méthode testée Afrique</span>
         </div>
         <div class="hero__stat">
-          <span class="hero__stat-num">94%</span>
-          <span class="hero__stat-label">Taux de satisfaction</span>
+          <span class="hero__stat-num">⚡</span>
+          <span class="hero__stat-label">Accès immédiat</span>
         </div>
       </div>
     </div>
@@ -924,11 +948,11 @@
       </div>
       <!-- Floating badge 1 -->
       <div style="position:absolute; top:28px; left:-24px; background:#C9A84C; color:#1a3d2b; border-radius:14px; padding:10px 16px; font-size:13px; font-weight:700; box-shadow:0 8px 24px rgba(201,168,76,.45); white-space:nowrap;">
-        🚀 Lancé en 6 semaines
+        🚀 Méthode testée sur le marché africain
       </div>
       <!-- Floating badge 2 -->
       <div style="position:absolute; bottom:40px; right:-20px; background:#1a3d2b; border:1.5px solid #C9A84C; color:white; border-radius:14px; padding:10px 16px; font-size:12px; font-weight:600; box-shadow:0 8px 24px rgba(0,0,0,.4);">
-        ✓ 2 000+ étudiants formés
+        ⚡ Accès immédiat après paiement
       </div>
     </div>
   </div>
@@ -969,59 +993,59 @@
     <p class="section-sub">Un programme complet, du débutant au vendeur professionnel, pensé pour le contexte africain.</p>
     <div class="learn__grid">
       <div class="learn__item">
-        <div class="learn__icon">🛒</div>
+        <div class="learn__icon">🔍</div>
         <div>
-          <div class="learn__item-title">Créer ta boutique en ligne</div>
-          <div class="learn__item-desc">Shopify, WooCommerce ou solution locale — choisir et configurer la bonne plateforme.</div>
-        </div>
-      </div>
-      <div class="learn__item">
-        <div class="learn__icon">📦</div>
-        <div>
-          <div class="learn__item-title">Sourcing & fournisseurs</div>
-          <div class="learn__item-desc">Trouver des produits rentables, négocier avec des fournisseurs locaux et internationaux.</div>
-        </div>
-      </div>
-      <div class="learn__item">
-        <div class="learn__icon">📲</div>
-        <div>
-          <div class="learn__item-title">Marketing WhatsApp & réseaux</div>
-          <div class="learn__item-desc">Acquérir des clients avec Facebook Ads, TikTok et les groupes WhatsApp Business.</div>
-        </div>
-      </div>
-      <div class="learn__item">
-        <div class="learn__icon">💳</div>
-        <div>
-          <div class="learn__item-title">Paiements mobiles intégrés</div>
-          <div class="learn__item-desc">Wave, Orange Money, MTN MoMo — accepter les paiements sans friction.</div>
-        </div>
-      </div>
-      <div class="learn__item">
-        <div class="learn__icon">🚚</div>
-        <div>
-          <div class="learn__item-title">Logistique & livraison locale</div>
-          <div class="learn__item-desc">Partenaires de livraison fiables, gestion des retours, traçabilité colis.</div>
-        </div>
-      </div>
-      <div class="learn__item">
-        <div class="learn__icon">📊</div>
-        <div>
-          <div class="learn__item-title">Analyse & croissance</div>
-          <div class="learn__item-desc">Lire ses chiffres, optimiser son tunnel de vente et scaler ses revenus.</div>
+          <div class="learn__item-title">Trouver des produits gagnants</div>
+          <div class="learn__item-desc">Identifier les produits qui se vendent sur le marché africain, avant d'investir.</div>
         </div>
       </div>
       <div class="learn__item">
         <div class="learn__icon">🤝</div>
         <div>
-          <div class="learn__item-title">Service client africain</div>
-          <div class="learn__item-desc">Fidéliser, gérer les litiges et construire une réputation solide sur le continent.</div>
+          <div class="learn__item-title">Sourcer chez des fournisseurs fiables</div>
+          <div class="learn__item-desc">Trouver des fournisseurs locaux sérieux et commander depuis la Chine sans se faire arnaquer.</div>
         </div>
       </div>
       <div class="learn__item">
-        <div class="learn__icon">⚡</div>
+        <div class="learn__icon">📦</div>
         <div>
-          <div class="learn__item-title">Automatisation & outils IA</div>
-          <div class="learn__item-desc">Gagner du temps avec les bons outils pour scaler sans embaucher.</div>
+          <div class="learn__item-title">Importer depuis la Chine</div>
+          <div class="learn__item-desc">Commande, suivi, dédouanement — les étapes concrètes pour recevoir ta marchandise.</div>
+        </div>
+      </div>
+      <div class="learn__item">
+        <div class="learn__icon">🛒</div>
+        <div>
+          <div class="learn__item-title">Créer ta boutique YouCan de A à Z</div>
+          <div class="learn__item-desc">Créer et configurer ta boutique YouCan de A à Z — la plateforme pensée pour le marché africain.</div>
+        </div>
+      </div>
+      <div class="learn__item">
+        <div class="learn__icon">💡</div>
+        <div>
+          <div class="learn__item-title">Configurer une page produit qui convertit</div>
+          <div class="learn__item-desc">Structure, texte, visuels — une fiche produit conçue pour déclencher l'achat.</div>
+        </div>
+      </div>
+      <div class="learn__item">
+        <div class="learn__icon">📣</div>
+        <div>
+          <div class="learn__item-title">Lancer des publicités Facebook Ads</div>
+          <div class="learn__item-desc">Créer des vidéos pub, configurer le Pixel et lancer une campagne de testing rentable.</div>
+        </div>
+      </div>
+      <div class="learn__item">
+        <div class="learn__icon">📊</div>
+        <div>
+          <div class="learn__item-title">Analyser et optimiser ses campagnes</div>
+          <div class="learn__item-desc">Lire les bons indicateurs et ajuster pour réduire le coût par achat.</div>
+        </div>
+      </div>
+      <div class="learn__item">
+        <div class="learn__icon">🎯</div>
+        <div>
+          <div class="learn__item-title">Étude de cas réelle</div>
+          <div class="learn__item-desc">Voir une vraie campagne gagnante décortiquée — produit, pub, résultats, leçons.</div>
         </div>
       </div>
     </div>
@@ -1046,7 +1070,7 @@
           <img src="https://images.pexels.com/photos/7550279/pexels-photo-7550279.jpeg?auto=compress&cs=tinysrgb&w=500&h=210&fit=crop"
             alt="Entrepreneur tablette" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy"/>
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(16,36,24,.55) 0%,transparent 60%);display:flex;align-items:flex-end;padding:14px;">
-            <span style="color:#C9A84C;font-weight:700;font-size:14px;">7 pays · Afrique de l'Ouest</span>
+            <span style="color:#C9A84C;font-weight:700;font-size:14px;">Méthode testée · Marché africain</span>
           </div>
         </div>
       </div>
@@ -1055,10 +1079,10 @@
         <span class="tag">Notre mission</span>
         <h2 class="section-title" style="text-align:left; margin-bottom:20px;">Formé pour le marché africain,<br/>pas pour l'Occident</h2>
         <p style="color:var(--text-muted); font-size:16px; line-height:1.8; margin-bottom:24px;">
-          Toutes les formations e-commerce disponibles en ligne parlent de Stripe, PayPal, Amazon. Ici, on parle de <strong>Wave, Orange Money</strong>, de fournisseurs locaux, de livraison dans les quartiers de Dakar, Abidjan ou Conakry.
+          La plupart des tutos que tu trouves en ligne sont faits pour l'Europe — ils te montrent des outils que tu ne maîtrises pas dans ton contexte. Ici, on parle de <strong>fournisseurs locaux et chinois accessibles</strong>, de logistique africaine, de publicité Facebook adaptée à notre marché.
         </p>
         <p style="color:var(--text-muted); font-size:16px; line-height:1.8; margin-bottom:32px;">
-          Notre approche : des méthodes testées, des résultats mesurables, une communauté d'entrepreneurs qui se serrent les coudes à travers 7 pays.
+          Une méthode construite pour notre réalité, pas importée. Des étapes concrètes, dans l'ordre, pour passer de zéro à une boutique qui vend.
         </p>
         <div style="display:flex; flex-wrap:wrap; gap:12px;">
           <div style="display:flex; align-items:center; gap:10px; background:rgba(26,61,43,.06); border-radius:10px; padding:12px 18px;">
@@ -1098,62 +1122,43 @@
   <div class="container text-center">
     <span class="tag">Modules</span>
     <h2 class="section-title">Le programme détaillé</h2>
-    <p class="section-sub">8 modules progressifs pour passer de zéro à un business rentable.</p>
+    <p class="section-sub">3 modules complets pour passer de zéro à une boutique qui vend, de A à Z.</p>
     <div class="programme__list">
       <div class="module">
         <div class="module__num">1</div>
         <div>
-          <div class="module__title">Fondations du e-commerce africain</div>
-          <div class="module__desc">Comprendre le marché, les opportunités réelles, et les erreurs à éviter dès le départ.</div>
+          <div class="module__title">Produits &amp; Fournisseurs</div>
+          <div class="module__desc">Trouve les bons produits et les bons partenaires avant d'investir un seul franc.</div>
+          <ul class="module__lessons">
+            <li>Trouver des produits gagnants sur le marché africain</li>
+            <li>Identifier des fournisseurs locaux fiables</li>
+            <li>Commander en Chine sans se faire arnaquer</li>
+          </ul>
         </div>
       </div>
       <div class="module">
         <div class="module__num">2</div>
         <div>
-          <div class="module__title">Trouver et valider ton produit gagnant</div>
-          <div class="module__desc">Méthode de recherche produit, étude de la demande locale, test avant investissement.</div>
+          <div class="module__title">Créer sa boutique professionnelle de A à Z</div>
+          <div class="module__desc">Lance une boutique YouCan complète, prête à vendre, sans compétence technique.</div>
+          <ul class="module__lessons">
+            <li>Inscription et configuration de YouCan</li>
+            <li>Nom de domaine et logo</li>
+            <li>Créer une page produit qui convertit</li>
+          </ul>
         </div>
       </div>
       <div class="module">
         <div class="module__num">3</div>
         <div>
-          <div class="module__title">Construire ta boutique professionnelle</div>
-          <div class="module__desc">Mise en place technique, fiches produits persuasives, images et descriptions qui vendent.</div>
-        </div>
-      </div>
-      <div class="module">
-        <div class="module__num">4</div>
-        <div>
-          <div class="module__title">Intégrer les paiements & la logistique</div>
-          <div class="module__desc">Wave, Orange Money, partenaires de livraison, gestion des stocks et des commandes.</div>
-        </div>
-      </div>
-      <div class="module">
-        <div class="module__num">5</div>
-        <div>
-          <div class="module__title">Attirer tes premiers clients</div>
-          <div class="module__desc">Facebook Ads budget serré, groupes WhatsApp, influenceurs micro-locaux.</div>
-        </div>
-      </div>
-      <div class="module">
-        <div class="module__num">6</div>
-        <div>
-          <div class="module__title">Convertir & fidéliser</div>
-          <div class="module__desc">Relances automatiques, programme de fidélité, service client 5 étoiles.</div>
-        </div>
-      </div>
-      <div class="module">
-        <div class="module__num">7</div>
-        <div>
-          <div class="module__title">Analyser et optimiser</div>
-          <div class="module__desc">Tableaux de bord, KPIs essentiels, décisions basées sur les données réelles.</div>
-        </div>
-      </div>
-      <div class="module">
-        <div class="module__num">8</div>
-        <div>
-          <div class="module__title">Scaler ton business</div>
-          <div class="module__desc">Déléguer, automatiser, ouvrir vers d'autres pays — passer à un business de 6 chiffres.</div>
+          <div class="module__title">Maîtriser la publicité Facebook Ads</div>
+          <div class="module__desc">Attire tes premiers clients avec des publicités efficaces, même avec un petit budget.</div>
+          <ul class="module__lessons">
+            <li>Créer des vidéos pub qui vendent</li>
+            <li>Configurer ton compte publicitaire et le Pixel Facebook</li>
+            <li>Lancer une campagne de testing</li>
+            <li>Étude de cas réelle : une vraie campagne gagnante décortiquée</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -1173,24 +1178,23 @@
         <div class="pricing-card__name-label" style="margin-top:8px;">Formation e-commerce Afrique 2026</div>
         <div class="pricing-card__name" style="color:#fff; font-size:34px;">Formation Complète</div>
         <div class="pricing-price" style="margin:20px 0 28px;">
-          <div class="pricing-price__old">9 900 F CFA</div>
+          <div class="pricing-price__old">15 000 F CFA</div>
           <div style="display:flex; align-items:baseline; justify-content:center; gap:8px;">
-            <span class="pricing-price__amount" style="font-size:64px;">4 999</span>
+            <span class="pricing-price__amount" style="font-size:64px;">10 000</span>
             <span style="color:rgba(255,255,255,.6); font-size:20px;">F CFA</span>
           </div>
           <div style="display:inline-block; background:rgba(201,168,76,.25); border:1px solid rgba(201,168,76,.4); color:#dfc06e; font-size:12px; font-weight:700; letter-spacing:.08em; border-radius:100px; padding:4px 14px; margin-top:8px;">
-            TU ÉCONOMISES 4 901 F CFA
+            TU ÉCONOMISES 5 000 F CFA
           </div>
         </div>
         <hr class="pricing-divider" />
         <ul class="pricing-card__features" style="text-align:left; max-width:340px; margin:0 auto 32px;">
-          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Tous les 8 modules complets</li>
+          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Les 3 modules complets de A à Z</li>
           <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Vidéos HD + ressources PDF téléchargeables</li>
-          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Accès au groupe WhatsApp privé</li>
-          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>1 session de coaching individuel incluse</li>
+          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Étude de cas réelle : vraie campagne gagnante</li>
           <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Mises à jour gratuites à vie</li>
-          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Certificat de formation</li>
           <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>Accès immédiat après paiement</li>
+          <li class="pricing-card__feature"><span class="pricing-card__feature-icon">✓</span>🔒 Garantie remboursement 7 jours</li>
         </ul>
         <button class="btn btn-primary btn-block checkout-btn" data-product="prd_r9u520m5" data-label="Formation Complète" style="font-size:18px; padding:22px;">
           <span class="spinner"></span>
@@ -1237,7 +1241,7 @@
         <div class="stars">★★★★★</div>
         <div class="testimonial-card__quote">"</div>
         <p class="testimonial-card__text">
-          En 6 semaines j'ai lancé ma boutique de vêtements en ligne. Aujourd'hui je fais plus de 300 000 F CFA de chiffre d'affaires par mois. La formation m'a ouvert des portes que je n'imaginais même pas.
+          J'avais zéro expérience en e-commerce. La formation m'a guidée étape par étape — j'ai lancé ma boutique et reçu mes premières commandes plus vite que je ne le pensais. Très concret, très actionnable.
         </p>
         <div class="testimonial-card__author">
           <img src="https://images.pexels.com/photos/10375889/pexels-photo-10375889.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop&facepad=2"
@@ -1269,7 +1273,7 @@
         <div class="stars">★★★★★</div>
         <div class="testimonial-card__quote">"</div>
         <p class="testimonial-card__text">
-          Le module sur les Facebook Ads à petit budget m'a changé la vie. J'ai lancé une campagne avec 5 000 F CFA et généré 12 commandes en 3 jours. Je recommande à 100%.
+          Le module Facebook Ads est vraiment bien fait. J'ai suivi les étapes à la lettre, configuré mon Pixel, et mes premières campagnes ont commencé à générer des résultats. Je recommande à 100%.
         </p>
         <div class="testimonial-card__author">
           <img src="https://images.pexels.com/photos/8475183/pexels-photo-8475183.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop&facepad=2"
@@ -1348,7 +1352,7 @@
         </button>
         <div class="faq-item__a" role="region">
           <div class="faq-item__a-inner">
-            Nous avons confiance en la qualité de notre formation. Si pour une raison quelconque tu n'es pas satisfait(e) dans les 7 jours suivant l'achat, contacte-nous à idykane03@gmail.com et nous examinerons ta demande. Notre priorité, c'est ta réussite.
+            Si tu n'es pas satisfait(e) dans les 7 jours suivant l'achat, envoie-nous un email à idykane03@gmail.com et nous te remboursons intégralement. Sans question.
           </div>
         </div>
       </div>
@@ -1361,7 +1365,7 @@
 <section class="cta-banner">
   <div class="container cta-banner__content">
     <h2 class="cta-banner__title">Prêt à lancer ton business ?</h2>
-    <p class="cta-banner__sub">Rejoins plus de 2 000 entrepreneurs africains qui vendent en ligne.</p>
+    <p class="cta-banner__sub">Une méthode complète — produits, boutique, publicité — adaptée à ta réalité.</p>
     <a href="#pricing" class="btn btn-primary btn-lg" onclick="fbq('track','ViewContent')">
       Je veux me former maintenant →
     </a>
