@@ -1097,6 +1097,57 @@
       letter-spacing: .04em;
       margin-bottom: 24px;
     }
+    /* Steps */
+    .modal-step { display: none; }
+    .modal-step.active { display: block; }
+    /* Step indicator */
+    .modal-steps-indicator {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 24px;
+    }
+    .step-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(26,61,43,.15);
+      transition: background .3s;
+    }
+    .step-dot.active { background: var(--gold); }
+    .step-line { flex: 1; height: 1px; background: rgba(26,61,43,.1); }
+    /* Payment method buttons */
+    .pay-btn {
+      width: 100%; padding: 18px 20px;
+      border-radius: var(--r-md);
+      border: 2px solid transparent;
+      cursor: pointer;
+      display: flex; align-items: center; gap: 16px;
+      font-family: var(--font-body);
+      font-size: 16px; font-weight: 700;
+      transition: border-color .2s, box-shadow .2s, transform .15s;
+      margin-bottom: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pay-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+    .pay-btn:active { transform: translateY(0); }
+    .pay-btn.wave { background: #eef2ff; border-color: #1B4FCC; color: #1B4FCC; }
+    .pay-btn.wave:hover { border-color: #0d3baa; box-shadow: 0 8px 24px rgba(27,79,204,.2); }
+    .pay-btn.om { background: #fff3eb; border-color: #FF6600; color: #c24e00; }
+    .pay-btn.om:hover { border-color: #c24e00; box-shadow: 0 8px 24px rgba(255,102,0,.2); }
+    .pay-btn img { height: 28px; width: auto; }
+    .pay-btn .pay-label { flex: 1; text-align: left; }
+    .pay-btn .pay-arrow { opacity: .5; font-size: 18px; }
+    .pay-btn.loading-pay { opacity: .7; pointer-events: none; }
+    .modal-back {
+      background: none; border: none; cursor: pointer;
+      color: var(--green); font-size: 13px; font-weight: 600;
+      display: flex; align-items: center; gap: 4px;
+      padding: 0; margin-bottom: 20px; opacity: .6;
+      transition: opacity .2s;
+    }
+    .modal-back:hover { opacity: 1; }
+    .pay-secure {
+      text-align: center; font-size: 11px; color: #aaa;
+      margin-top: 16px; display: flex; align-items: center; justify-content: center; gap: 4px;
+    }
     .field-label {
       display: block;
       font-size: 11px;
