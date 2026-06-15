@@ -22,7 +22,17 @@
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1550710343266785');
   fbq('track', 'PageView');
-  </script>
+</script>
+<script>
+  function track(event) {
+    fetch('/api/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ event })
+    }).catch(() => {});
+  }
+  track('PageView');
+</script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1550710343266785&ev=PageView&noscript=1"
   /></noscript>
@@ -2045,6 +2055,7 @@
       const productId = btn.dataset.product;
       const label = btn.dataset.label;
       if (typeof fbq !== 'undefined') fbq('track', 'InitiateCheckout', { content_name: label, content_ids: [productId] });
+      track('InitiateCheckout');
       openModal(productId, label);
     });
   });

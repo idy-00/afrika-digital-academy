@@ -449,7 +449,7 @@
     });
 
     try {
-      const res  = await fetch(`/api/pixel-stats?days=${days}`);
+      const res  = await fetch(`/api/stats?days=${days}`);
       const data = await res.json();
 
       if (data.error) {
