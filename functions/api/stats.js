@@ -21,7 +21,11 @@ export async function onRequestGet(context) {
       keys.push(`day:${date}:${ev}`);
     }
   }
-  const totalKeys = events.map(ev => `total:${ev}`);
+  const totalKeys = [
+    ...events.map(ev => `total:${ev}`),
+    'total:session_seconds',
+    'total:session_count'
+  ];
 
   const [dayResults, totalResults] = await Promise.all([
     Promise.all(keys.map(k => KV.get(k))),
@@ -33,6 +37,10 @@ export async function onRequestGet(context) {
   events.forEach((ev, i) => {
     totals[ev] = parseInt(totalResults[i]) || 0;
   });
+
+  const totalSecs  = parseInt(totalResults[events.length])     || 0;
+  const totalSess  = parseInt(totalResults[events.length + 1]) || 0;
+  const avgSeconds = totalSess > 0 ? Math.round(totalSecs / totalSess) : 0;
 
   // Build series per day
   const series = dates.map((date, di) => {
@@ -46,12 +54,25 @@ export async function onRequestGet(context) {
   // Build flat event list
   const eventList = events.map(ev => ({ event: ev, count: totals[ev] })).filter(e => e.count > 0);
 
+  // Build daily avg session duration
+  const daySessionKeys = dates.flatMap(d => [
+    `day:${d}:session_seconds`,
+    `day:${d}:session_count`
+  ]);
+  const daySessionVals = await Promise.all(daySessionKeys.map(k => KV.get(k)));
+  const seriesWithDuration = series.map((s, i) => {
+    const secs  = parseInt(daySessionVals[i * 2])     || 0;
+    const count = parseInt(daySessionVals[i * 2 + 1]) || 0;
+    return { ...s, avg_session_seconds: count > 0 ? Math.round(secs / count) : 0, sessions: count };
+  });
+
   return Response.json({
     source: 'kv',
     period_days: days,
     events: eventList,
-    series,
-    totals
+    series: seriesWithDuration,
+    totals,
+    session: { avg_seconds: avgSeconds, total_sessions: totalSess }
   }, {
     headers: { 'Cache-Control': 'no-store' }
   });

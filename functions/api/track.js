@@ -11,7 +11,28 @@ export async function onRequestPost(context) {
 
   const today = new Date().toISOString().slice(0, 10);
 
-  // Increment daily counter
+  if (event === 'SessionDuration' && body.seconds > 0) {
+    const seconds = Math.min(parseInt(body.seconds) || 0, 3600);
+    const totalSecsKey  = 'total:session_seconds';
+    const totalSessKey  = 'total:session_count';
+    const daySecsKey    = `day:${today}:session_seconds`;
+    const daySessKey    = `day:${today}:session_count`;
+
+    const [ts, tc, ds, dc] = await Promise.all([
+      KV.get(totalSecsKey), KV.get(totalSessKey),
+      KV.get(daySecsKey),   KV.get(daySessKey)
+    ]);
+
+    await Promise.all([
+      KV.put(totalSecsKey, String((parseInt(ts) || 0) + seconds)),
+      KV.put(totalSessKey, String((parseInt(tc) || 0) + 1)),
+      KV.put(daySecsKey,   String((parseInt(ds) || 0) + seconds), { expirationTtl: 60 * 60 * 24 * 120 }),
+      KV.put(daySessKey,   String((parseInt(dc) || 0) + 1),       { expirationTtl: 60 * 60 * 24 * 120 }),
+    ]);
+
+    return Response.json({ ok: true }, { headers: { 'Access-Control-Allow-Origin': '*' } });
+  }
+
   const dayKey   = `day:${today}:${event}`;
   const totalKey = `total:${event}`;
 

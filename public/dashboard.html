@@ -356,6 +356,11 @@
       <div class="kpi-value skeleton" id="v-total">—</div>
       <div class="kpi-sub">Tous types</div>
     </div>
+    <div class="kpi">
+      <div class="kpi-label">Temps moyen / visite</div>
+      <div class="kpi-value skeleton gold" id="v-duration">—</div>
+      <div class="kpi-sub" id="v-sessions">— sessions</div>
+    </div>
   </div>
 
   <!-- Line + Doughnut -->
@@ -442,7 +447,7 @@
     icon.parentElement.classList.add('spin');
     clearAlert();
 
-    ['v-pageview','v-checkout','v-purchase','v-cvr','v-viewcontent','v-total'].forEach(id => {
+    ['v-pageview','v-checkout','v-purchase','v-cvr','v-viewcontent','v-total','v-duration'].forEach(id => {
       const el = document.getElementById(id);
       el.classList.add('skeleton');
       el.textContent = '—';
@@ -494,6 +499,19 @@
     setVal('v-cvr',         cvr);
     setVal('v-viewcontent', fmt(vc));
     setVal('v-total',       fmt(total));
+
+    const session = data.session || {};
+    const avgSec  = session.avg_seconds || 0;
+    const mins    = Math.floor(avgSec / 60);
+    const secs    = avgSec % 60;
+    const durLabel = avgSec > 0
+      ? (mins > 0 ? `${mins}m ${secs}s` : `${secs}s`)
+      : '—';
+    setVal('v-duration', durLabel);
+    const sessEl = document.getElementById('v-sessions');
+    sessEl.textContent = session.total_sessions > 0
+      ? `${session.total_sessions} sessions`
+      : 'Pas encore de données';
 
     if (total === 0) {
       alert$('Aucune donnée pour cette période. Le Pixel est peut-être récent ou le token n\'a pas les permissions <strong>ads_read</strong>.', 'warn');
