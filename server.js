@@ -41,7 +41,8 @@ app.post('/api/checkout', async (req, res) => {
     phone: {
       number: phone_number,
       country_code: phone_country || 'SN'
-    }
+    },
+    redirect_url: `${req.protocol}://${req.get('host')}/merci`
   };
 
   try {

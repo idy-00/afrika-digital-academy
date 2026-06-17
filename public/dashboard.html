@@ -361,6 +361,11 @@
       <div class="kpi-value skeleton gold" id="v-duration">—</div>
       <div class="kpi-sub" id="v-sessions">— sessions</div>
     </div>
+    <div class="kpi">
+      <div class="kpi-label">Abandon paiement</div>
+      <div class="kpi-value skeleton" id="v-abandon">—</div>
+      <div class="kpi-sub" id="v-abandon-sub">Clics sans achat</div>
+    </div>
   </div>
 
   <!-- Line + Doughnut -->
@@ -447,7 +452,7 @@
     icon.parentElement.classList.add('spin');
     clearAlert();
 
-    ['v-pageview','v-checkout','v-purchase','v-cvr','v-viewcontent','v-total','v-duration'].forEach(id => {
+    ['v-pageview','v-checkout','v-purchase','v-cvr','v-viewcontent','v-total','v-duration','v-abandon'].forEach(id => {
       const el = document.getElementById(id);
       el.classList.add('skeleton');
       el.textContent = '—';
@@ -499,6 +504,13 @@
     setVal('v-cvr',         cvr);
     setVal('v-viewcontent', fmt(vc));
     setVal('v-total',       fmt(total));
+
+    // Abandon rate
+    const abandoned   = Math.max(0, ic - pur);
+    const abandonRate = ic > 0 ? ((abandoned / ic) * 100).toFixed(0) + '%' : '—';
+    setVal('v-abandon', abandonRate);
+    document.getElementById('v-abandon-sub').textContent =
+      ic > 0 ? `${abandoned} sur ${ic} clics` : 'Pas encore de données';
 
     const session = data.session || {};
     const avgSec  = session.avg_seconds || 0;

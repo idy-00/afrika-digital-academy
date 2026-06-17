@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paiement confirmé — Afrika Digital Academy</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f6f4;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 56px 48px;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(0,0,0,.08);
+    }
+    .check {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: #e6f9ed;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .check svg { width: 36px; height: 36px; stroke: #1e7e34; stroke-width: 2.5; fill: none; }
+    h1 {
+      font-size: 26px; font-weight: 800;
+      color: #1a2e1a; margin-bottom: 10px;
+    }
+    p {
+      font-size: 15px; color: #6b8c6b;
+      line-height: 1.6; margin-bottom: 32px;
+    }
+    .highlight { color: #C9A84C; font-weight: 700; }
+    .btn {
+      display: inline-block;
+      background: #1a3d2b;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: opacity .2s;
+    }
+    .btn:hover { opacity: .85; }
+    .sub {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="check">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h1>Paiement confirmé !</h1>
+    <p>
+      Bienvenue dans <span class="highlight">Afrika Digital Academy</span>.<br/>
+      Tu vas recevoir un email avec ton accès à la formation d'ici quelques minutes.
+    </p>
+    <a href="/" class="btn">Retour au site</a>
+    <div class="sub">Des questions ? <a href="mailto:idykane03@gmail.com" style="color:#C9A84C;">idykane03@gmail.com</a></div>
+  </div>
+
+  <script>
+    // Track successful purchase
+    fetch('/api/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ event: 'Purchase' })
+    }).catch(() => {});
+
+    // Facebook Pixel
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Purchase', { value: 10000, currency: 'XOF' });
+    }
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1550710343266785');
+  fbq('track', 'Purchase', { value: 10000, currency: 'XOF' });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1550710343266785&ev=Purchase&noscript=1"
+  /></noscript>
+</body>
+</html>

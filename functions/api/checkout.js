@@ -33,6 +33,8 @@ export async function onRequestPost(context) {
     );
   }
 
+  const origin = new URL(request.url).origin;
+
   const payload = {
     product_id,
     email,
@@ -41,7 +43,8 @@ export async function onRequestPost(context) {
     phone: {
       number: phone_number,
       country_code: phone_country || 'SN'
-    }
+    },
+    redirect_url: `${origin}/merci`
   };
 
   try {
